@@ -2,5 +2,5 @@
 
 class Subject extends \Eloquent {
 
-	protected $fillable = ['nom'];
+	protected $fillable = ['name'];
 }

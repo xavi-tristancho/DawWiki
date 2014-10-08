@@ -1,8 +1,9 @@
 <?php
 
 use DawWiki\Subjects\Subject;
+use DawWiki\Subjects\SubjectTransformer;
 
-class SubjectsController extends \BaseController {
+class SubjectsController extends ApiController {
 
 	/**
 	 * Display a listing of the resource.
@@ -12,6 +13,8 @@ class SubjectsController extends \BaseController {
 	 */
 	public function index()
 	{
-		return Subject::all();
+		$subjects = Subject::all();
+
+		return $this->respondWithCollection($subjects, new SubjectTransformer);
 	}
 }

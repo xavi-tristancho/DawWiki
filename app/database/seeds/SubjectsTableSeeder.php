@@ -19,7 +19,7 @@ class SubjectsTableSeeder extends Seeder {
 		{
 			Subject::create([
 
-				'nom' => $subject
+				'name' => $subject
 			]);
 		}
 	}
