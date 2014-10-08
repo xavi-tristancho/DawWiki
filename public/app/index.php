@@ -2,7 +2,7 @@
 <html class="no-js" ng-app="app">
   <head>
     <meta charset="utf-8">
-    <title>frontend</title>
+    <title>DawWiki</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -27,7 +27,9 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div ng-view></div>
+    <div ng-include="'app/partials/navbar.html'"></div>
+
+    <div class="container" ng-view></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
@@ -50,8 +52,9 @@
     <!-- endbuild -->
 
     <!-- build:js({app,.tmp}) scripts/main.js -->
-    <script src="app/scripts/public.js"></script>
-    <script src="app/scripts/main/main-ctrl.js"></script>
+    <script src="app/scripts/app.js"></script>
+    <script src="app/scripts/navbar/NavbarCtrl.js"></script>
+    <script src="app/scripts/subjects/SubjectsCtrl.js"></script>
 
     <!-- inject:partials -->
     <!-- angular templates will be automaticaly converted in js and inserted here -->
