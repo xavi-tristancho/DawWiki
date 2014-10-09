@@ -17,4 +17,13 @@ class SubjectsController extends ApiController {
 
 		return $this->respondWithCollection($subjects, new SubjectTransformer);
 	}
+
+	public function show($name){
+
+		$name = ucfirst(str_replace('-', ' ', $name));
+
+		$subject = Subject::where('name', '=', $name)->get();
+
+		return $this->respondWithCollection($subject, new SubjectTransformer);
+	}
 }
