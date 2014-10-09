@@ -15,8 +15,9 @@ class ShareTransformer extends TransformerAbstract
         return [
             'id'           => (int) $share->id,
             'name'         => $share->name,
-            'language'         => $share->language,
-            'executable'         => $share->executable,
+            'language'     => $share->language,
+            'executable'   => (boolean) $share->executable,
+            'link'         => $share->link,
         ];
     }
 }

@@ -56,6 +56,7 @@
     <script src="app/scripts/app.js"></script>
     <script src="app/scripts/navbar/NavbarCtrl.js"></script>
     <script src="app/scripts/subjects/SubjectsCtrl.js"></script>
+    <script src="app/scripts/shares/SharesCtrl.js"></script>
     <script src="app/scripts/dashboard/DashboardCtrl.js"></script>
     <script src="app/scripts/filters/spacesToDashes.js"></script>
 

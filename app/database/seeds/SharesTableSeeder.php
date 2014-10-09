@@ -9,17 +9,20 @@ class SharesTableSeeder extends Seeder {
 			[
 				'name' => 'Gist',
 				'language' => 'All',
-				'executable' => 0
+				'executable' => 0,
+				'link' => 'https://gist.github.com'
 			],
 			[
 				'name' => 'Laravel Bin',
 				'language' => 'PHP',
-				'executable' => 0
+				'executable' => 0,
+				'link' => 'http://laravel.io/bin/'
 			],
 			[
 				'name' => 'JSFiddle',
 				'language' => 'javascript',
-				'executable' => 1
+				'executable' => 1,
+				'link' => 'http://jsfiddle.net/'
 			]
 	];
 
@@ -30,7 +33,8 @@ class SharesTableSeeder extends Seeder {
 			Share::create([
 				'name' => $tool['name'],
 				'language' => $tool['language'],
-				'executable' => $tool['executable']
+				'executable' => $tool['executable'],
+				'link' => $tool['link']
 			]);
 		}
 	}

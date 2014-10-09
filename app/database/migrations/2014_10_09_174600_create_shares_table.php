@@ -18,6 +18,7 @@ class CreateSharesTable extends Migration {
 			$table->string('name');
 			$table->string('language');
 			$table->boolean('executable');
+			$table->string('link');
 			$table->timestamps();
 		});
 	}

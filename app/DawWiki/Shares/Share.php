@@ -2,5 +2,5 @@
 
 class Share extends \Eloquent {
 
-	protected $fillable = ['name' , 'language' , 'executable'];
+	protected $fillable = ['name' , 'language' , 'executable' , 'link'];
 }
