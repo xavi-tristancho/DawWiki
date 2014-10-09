@@ -10,4 +10,5 @@ Route::get('/', function()
 Route::group(array('prefix' => 'api'), function() {
 
 	Route::resource('subjects', 'SubjectsController');
+	Route::resource('shares', 'SharesController');
 });
