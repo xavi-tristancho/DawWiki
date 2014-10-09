@@ -10,4 +10,14 @@ angular.module('app')
   		vm.subjectsList = data.data;
   	});
 
+  })
+  .controller('ShowSubjectsCtrl', function($http, $routeParams){
+
+  	var vm = this;
+
+  	$http.get('api/subjects/' + $routeParams.name).success(function(data){
+
+  		vm.subject = data.data[0];
+  	});
+
   });

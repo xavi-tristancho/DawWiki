@@ -12,6 +12,11 @@ angular.module('app', ['restangular', 'ngRoute'])
         controller: 'SubjectsCtrl',
         controllerAs: 'subjects'
       })
+      .when('/subjects/:name', {
+        templateUrl: 'app/views/subjects/show.html',
+        controller: 'ShowSubjectsCtrl',
+        controllerAs: 'subjects'
+      })
       .otherwise({
         redirectTo: '/'
       });
