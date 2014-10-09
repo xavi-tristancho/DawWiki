@@ -5,7 +5,7 @@ angular.module('app')
 
   	var vm = this;
 
-  	$http.get('api/subjects').then(function(data){
+  	$http.get('api/subjects').success(function(data){
 
   		vm.subjectsList = data.data;
   	});

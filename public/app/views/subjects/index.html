@@ -4,8 +4,8 @@
 	</div>
 	<div class="col-md-6">
 		<ul class="list-group">
-			<li class="list-group-item" ng-repeat="subject in subjects.subjectsList.data">
-				{{ subject.name }}
+			<li class="list-group-item" ng-repeat="subject in subjects.subjectsList">
+				<a href="#/subjects/{{ subject.name | spacesToDashes }}">{{ subject.name }}</a>
 			</li>
 		</ul>
 	</div>
