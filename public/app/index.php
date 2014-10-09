@@ -48,13 +48,18 @@
     <script src="app/bower_components/lodash/dist/lodash.compat.js"></script>
     <script src="app/bower_components/restangular/dist/restangular.js"></script>
     <script src="app/bower_components/angular-route/angular-route.js"></script>
+    <script src="app/bower_components/angular-marked/angular-marked.js"></script>
+    <script src="app/bower_components/marked/lib/marked.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
+
 
     <!-- build:js({app,.tmp}) scripts/main.js -->
     <script src="app/scripts/app.js"></script>
     <script src="app/scripts/navbar/NavbarCtrl.js"></script>
     <script src="app/scripts/subjects/SubjectsCtrl.js"></script>
+    <script src="app/scripts/dashboard/DashboardCtrl.js"></script>
+    <script src="app/scripts/filters/spacesToDashes.js"></script>
 
     <!-- inject:partials -->
     <!-- angular templates will be automaticaly converted in js and inserted here -->
