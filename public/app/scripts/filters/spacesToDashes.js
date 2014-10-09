@@ -5,6 +5,6 @@ angular.module('app')
     return function (text) {
 		
 		var str = text.replace(/\s+/g, '-');
-		return str;
+		return str.toLowerCase();
     };
   });
