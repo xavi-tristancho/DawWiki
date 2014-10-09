@@ -48,8 +48,6 @@
     <script src="app/bower_components/lodash/dist/lodash.compat.js"></script>
     <script src="app/bower_components/restangular/dist/restangular.js"></script>
     <script src="app/bower_components/angular-route/angular-route.js"></script>
-    <script src="app/bower_components/angular-marked/angular-marked.js"></script>
-    <script src="app/bower_components/marked/lib/marked.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

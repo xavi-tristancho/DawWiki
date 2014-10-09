@@ -17,6 +17,11 @@ angular.module('app', ['restangular', 'ngRoute'])
         controller: 'ShowSubjectsCtrl',
         controllerAs: 'subjects'
       })
+      .when('/share', {
+        templateUrl: 'app/views/share/index.html',
+        controller: 'ShareCtrl',
+        controllerAs: 'share'
+      })
       .otherwise({
         redirectTo: '/'
       });
