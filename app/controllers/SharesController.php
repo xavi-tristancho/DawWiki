@@ -17,4 +17,16 @@ class SharesController extends ApiController {
 
 		return $this->respondWithCollection($shares, new ShareTransformer);
 	}
+
+	public function store(){
+
+		$inputs = Input::all();
+
+		return Share::create($inputs);
+	}
+
+	public function destroy($id){
+
+		return Share::destroy($id);
+	}
 }
