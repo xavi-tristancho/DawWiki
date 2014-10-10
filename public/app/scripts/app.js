@@ -22,6 +22,11 @@ angular.module('app', ['restangular', 'ngRoute'])
         controller: 'SharesCtrl',
         controllerAs: 'shares'
       })
+      .when('/shares/create', {
+        templateUrl: 'app/views/shares/create.html',
+        controller: 'NewSharesCtrl',
+        controllerAs: 'shares'
+      })
       .otherwise({
         redirectTo: '/'
       });

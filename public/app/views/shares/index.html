@@ -1,15 +1,22 @@
 <div class="row">
 	<div class="col-md-12">
+		<a href="#/shares/create"><button type="button" class="btn btn-success">Afegir Eina</button></a>
 		<h2>Eines per compartir codi:</h2>
 	</div>
+</div>
+<div class="row">
 	<div class="col-md-6">
 		<ul class="list-group"><div class="row">
 			<li class="list-group-item" ng-repeat="share in shares.sharesList">
 				<div class="row">
-					<div class="col-md-12">
+					<div class="col-md-5">
 						<h3><a href="{{ share.link }}" target="_blank">{{ share.name }}</a></h3>
 						Llenguatge: <span class="badge">{{ share.language }}</span> <br>
-						Executable: {{ shares.isExecutable(share.executable) }}
+						Executable: {{ shares.isExecutable(share.executable) }}	
+					</div>
+					<div class="col-md-3 col-md-offset-4">
+						<button type="button" class="btn btn-info btn-xs">Editar</button>
+						<button type="button" ng-click="shares.delteShareObject(share.id)" class="btn btn-danger btn-xs">Eliminar</button>
 					</div>
 				</div>
 			</li>
