@@ -1,15 +1,21 @@
-'use strict';
+(function(){
 
-angular.module('app')
-  .controller('SharesCtrl', function ($http) {
+	angular.module('app')
+	  .controller('SharesCtrl', SharesCtrl);
 
-  	var vm = this;
+	  function SharesCtrl($http) {
 
-  	console.log();
+	  	var vm = this;
 
-  	$http.get('api/shares').success(function(data){
+	  	$http.get('api/shares').success(function(data){
 
-  		vm.sharesList = data.data;
-  	});
+	  		vm.sharesList = data.data;
+	  	});
 
-  });
+	  	this.isExecutable = function(executable){
+
+	  		return (executable) ? 'Si' : 'No';
+	  	}
+	  }
+
+})();

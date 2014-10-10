@@ -1,23 +1,27 @@
-'use strict';
+(function(){
 
-angular.module('app')
-  .controller('SubjectsCtrl', function ($http) {
+  angular.module('app')
+    .controller('SubjectsCtrl', SubjectsCtrl)
+    .controller('ShowSubjectsCtrl' , ShowSubjectsCtrl);
 
-  	var vm = this;
+    function SubjectsCtrl($http) {
 
-  	$http.get('api/subjects').success(function(data){
+      var vm = this;
 
-  		vm.subjectsList = data.data;
-  	});
+      $http.get('api/subjects').success(function(data){
 
-  })
-  .controller('ShowSubjectsCtrl', function($http, $routeParams){
+        vm.subjectsList = data.data;
+      });
+    }
 
-  	var vm = this;
+    function ShowSubjectsCtrl($http, $routeParams){
 
-  	$http.get('api/subjects/' + $routeParams.name).success(function(data){
+        var vm = this;
 
-  		vm.subject = data.data[0];
-  	});
+        $http.get('api/subjects' + $routeParams.name).success(function(data){
 
-  });
+          vm.subject = data.data[0];
+        });
+    }
+
+})();
