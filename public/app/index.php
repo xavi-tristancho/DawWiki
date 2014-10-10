@@ -48,8 +48,6 @@
     <script src="app/bower_components/lodash/dist/lodash.compat.js"></script>
     <script src="app/bower_components/restangular/dist/restangular.js"></script>
     <script src="app/bower_components/angular-route/angular-route.js"></script>
-    <script src="app/bower_components/angular-strap/dist/angular-strap.min.js"></script>
-    <script src="app/bower_components/angular-strap/dist/angular-strap.tpl.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
