@@ -2,7 +2,8 @@
 
 	angular.module('app')
 	  .controller('SharesCtrl', SharesCtrl)
-	  .controller('NewSharesCtrl', NewSharesCtrl);
+	  .controller('NewSharesCtrl', NewSharesCtrl)
+	  .controller('EditSharesCtrl', EditSharesCtrl);
 
 	  function SharesCtrl($http, $location) {
 
@@ -43,6 +44,23 @@
 	  		$http.post('api/shares', vm.newShareObject);
 	  		$location.url('shares');
 	  	}
+	  }
+
+	  function EditSharesCtrl($http, $routeParams, $location){
+
+	  	var vm = this;
+
+	  	$http.get('api/shares/' + $routeParams.id).success(function(data){
+
+	  		vm.editShareObject = data.data;
+	  	});
+
+	  	vm.updateShareObject = function (){
+
+	  		$http.put('api/shares/' + $routeParams.id, vm.editShareObject);
+	  		$location.url('shares');
+	  	}
+
 	  }
 
 })();

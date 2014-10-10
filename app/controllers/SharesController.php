@@ -25,6 +25,26 @@ class SharesController extends ApiController {
 		return Share::create($inputs);
 	}
 
+	public function show($id){
+
+		$share = Share::find($id);
+
+		return $this->respondWithItem($share, new ShareTransformer);
+	}
+
+	public function update($id){
+
+		$share = Share::find($id);
+		$inputs = Input::all();
+
+		$share->name = $inputs['name'];
+		$share->language = $inputs['language'];
+		$share->executable = $inputs['executable'];
+		$share->link = $inputs['link'];
+
+		$share->save();
+	}
+
 	public function destroy($id){
 
 		return Share::destroy($id);

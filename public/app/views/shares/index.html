@@ -15,7 +15,7 @@
 						Executable: {{ shares.isExecutable(share.executable) }}	
 					</div>
 					<div class="col-md-3 col-md-offset-4">
-						<button type="button" class="btn btn-info btn-xs">Editar</button>
+						<a href="#/shares/edit/{{ share.id }}"><button type="button" class="btn btn-info btn-xs">Editar</button></a>
 						<button type="button" ng-click="shares.delteShareObject(share.id)" class="btn btn-danger btn-xs">Eliminar</button>
 					</div>
 				</div>
