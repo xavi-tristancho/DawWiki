@@ -27,7 +27,7 @@ angular.module('app', ['restangular', 'ngRoute'])
         controller: 'NewSharesCtrl',
         controllerAs: 'shares'
       })
-      .when('/shares/edit/:id', {
+      .when('/shares/:id/edit', {
         templateUrl: 'app/views/shares/edit.html',
         controller: 'EditSharesCtrl',
         controllerAs: 'shares'
@@ -35,5 +35,4 @@ angular.module('app', ['restangular', 'ngRoute'])
       .otherwise({
         redirectTo: '/'
       });
-  })
-;
+  });
