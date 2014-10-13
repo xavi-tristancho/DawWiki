@@ -19,7 +19,7 @@ class ApiController extends Controller
 		$this->fractal = $fractal;
 
 		// Are we going to try and include embedded data?
-		//$this->fractal->setRequestedScopes(explode(',', Input::get('embed')));
+		$this->fractal->setRequestedScopes(explode(',', Input::get('embed')));
 
 		$this->fireDebugFilters();
 	}

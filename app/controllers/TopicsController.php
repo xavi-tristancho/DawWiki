@@ -1,6 +1,7 @@
 <?php
 
 use DawWiki\Topics\Topic;
+use DawWiki\Topics\TopicTransformer;
 
 class TopicsController extends ApiController {
 
@@ -12,7 +13,9 @@ class TopicsController extends ApiController {
 	 */
 	public function index()
 	{
-		return Topic::all();
+		$topics =  Topic::all();
+
+		return $this->respondWithCollection($topics, new TopicTransformer);
 	}
 
 	/**
