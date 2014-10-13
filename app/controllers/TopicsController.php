@@ -1,0 +1,72 @@
+<?php
+
+use DawWiki\Topics\Topic;
+
+class TopicsController extends \BaseController {
+
+	/**
+	 * Display a listing of the resource.
+	 * GET /topics
+	 *
+	 * @return Response
+	 */
+	public function index()
+	{
+		return Topic::all();
+	}
+
+	/**
+	 * Store a newly created resource in storage.
+	 * POST /topics
+	 *
+	 * @return Response
+	 */
+	public function store()
+	{
+		return Topic::create($inputs);
+	}
+
+	/**
+	 * Display the specified resource.
+	 * GET /topics/{id}
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function show($id)
+	{
+		return Topic::find($id);
+	}
+
+	/**
+	 * Update the specified resource in storage.
+	 * PUT /topics/{id}
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function update($id)
+	{
+		$topic = Topic::find($id);
+		$inputs = Input::all();
+
+		// subject_id validation required
+		$topic->subject_id = $inputs['subject_id'];
+		$topic->name = $inputs['name'];
+
+		$topic->save();
+	}
+
+	/**
+	 * Remove the specified resource from storage.
+	 * DELETE /topics/{id}
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function destroy($id)
+	{
+		return Topic::destroy($id);
+	}
+
+}
