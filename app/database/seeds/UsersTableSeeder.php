@@ -13,7 +13,8 @@ class UsersTableSeeder extends Seeder {
 			User::create([
 				'username' => $faker->word . $index,
 				'email' => $faker->email,
-				'password' => 'secret'
+				'password' => 'secret',
+				'role' => 'member'
 			]);
 		}
 	}
