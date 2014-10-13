@@ -23,6 +23,8 @@ class TopicsController extends \BaseController {
 	 */
 	public function store()
 	{
+		$inputs = Input::all();
+		 
 		return Topic::create($inputs);
 	}
 
