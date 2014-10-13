@@ -2,7 +2,7 @@
 
 use DawWiki\Topics\Topic;
 
-class TopicsController extends \BaseController {
+class TopicsController extends ApiController {
 
 	/**
 	 * Display a listing of the resource.
