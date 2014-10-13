@@ -36,3 +36,16 @@ angular.module('app', ['restangular', 'ngRoute'])
         redirectTo: '/'
       });
   });
+
+angular.module('app').run(function($rootScope, $http){
+
+   $http.get('api/me').success(function(data)
+    {
+      $rootScope.role = data.data.role;
+    });
+
+   $rootScope.isAdmin = function(){
+
+    return $rootScope.role == 'admin';
+   }
+})
