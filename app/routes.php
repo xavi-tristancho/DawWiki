@@ -11,4 +11,7 @@ Route::group(array('prefix' => 'api'), function() {
 
 	Route::resource('subjects', 'SubjectsController');
 	Route::resource('shares', 'SharesController');
+	Route::resource('topics', 'TopicsController');
+	Route::resource('activities', 'ActivitiesController');
+	Route::resource('answers', 'AnswersController');
 });
