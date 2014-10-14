@@ -15,7 +15,7 @@ class ActivitiesTableSeeder extends Seeder {
 		{
 			Activity::create([
 				'topic_id' => $faker->randomElement($topics),
-				'title' => 'Activitat' . $index,
+				'title' => 'Activitat ' . $index,
 				'statement' => $faker->sentence(6)
 			]);
 		}

@@ -15,7 +15,7 @@ class TopicsTableSeeder extends Seeder {
 		{
 			Topic::create([
 				'subject_id' => $faker->randomElement($subjects),
-				'name' => 'Tema' . $index
+				'name' => 'Tema ' . $index
 			]);
 		}
 	}
