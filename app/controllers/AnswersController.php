@@ -1,6 +1,7 @@
 <?php
 
 use DawWiki\Answers\Answer;
+use DawWiki\Answers\AnswerTransformer;
 use League\Fractal\Manager;
 
 class AnswersController extends ApiController {
@@ -21,14 +22,15 @@ class AnswersController extends ApiController {
 	 */
 	public function index()
 	{
-		return Answer::all();
+		$answer = Answer::all();
+		return $this->respondWithCollection($answer, new AnswerTransformer);
 	}
 
 	public function show($id){
 
 		$answer = Answer::find($id);
 
-		return $answer;
+		return $this->respondWithItem($answer, new AnswerTransformer);
 	}
 
 	public function store()

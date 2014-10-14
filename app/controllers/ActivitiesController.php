@@ -1,6 +1,7 @@
 <?php
 
 use DawWiki\Activities\Activity;
+use DawWiki\Activities\ActivityTransformer;
 use League\Fractal\Manager;
 
 class ActivitiesController extends ApiController {
@@ -22,7 +23,7 @@ class ActivitiesController extends ApiController {
     {
         $activities = Activity::all();
 
-        return $activities;
+        return $this->respondWithCollection($activities, new ActivityTransformer);
     }
 
     public function store(){
@@ -36,7 +37,7 @@ class ActivitiesController extends ApiController {
 
         $activity = Activity::find($id);
 
-        return $activity;
+        return $this->respondWithItem($activity, new ActivityTransformer);;
     }
 
     public function update($id){

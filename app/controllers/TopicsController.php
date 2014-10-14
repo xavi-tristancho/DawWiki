@@ -48,7 +48,9 @@ class TopicsController extends ApiController {
 	 */
 	public function show($id)
 	{
-		return Topic::find($id);
+		$topic = Topic::find($id);
+		
+		return $this->respondWithItem($topic, new TopicTransformer);
 	}
 
 	/**
