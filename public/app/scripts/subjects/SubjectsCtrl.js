@@ -18,9 +18,9 @@
 
         var vm = this;
 
-        $http.get('api/subjects' + $routeParams.name).success(function(data){
+        $http.get('api/subjects/' + $routeParams.name + '?embed=topics').success(function(data){
 
-          vm.subject = data.data[0];
+          vm.subject = data.data;
         });
     }
 

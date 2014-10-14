@@ -17,6 +17,11 @@ angular.module('app', ['restangular', 'ngRoute'])
         controller: 'ShowSubjectsCtrl',
         controllerAs: 'subjects'
       })
+      .when('/subjects/:name/topics/:topic', {
+        templateUrl: 'app/views/topics/show.html',
+        controller: 'ShowSubjectsCtrl',
+        controllerAs: 'subjects'
+      })
       .when('/shares', {
         templateUrl: 'app/views/shares/index.html',
         controller: 'SharesCtrl',
