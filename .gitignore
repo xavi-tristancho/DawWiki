@@ -3,3 +3,4 @@
 .env.php
 /vendor
 .idea
+composer.lock
