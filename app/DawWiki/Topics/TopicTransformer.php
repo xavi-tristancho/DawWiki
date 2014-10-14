@@ -1,12 +1,14 @@
 <?php namespace DawWiki\Topics;
 
 use DawWiki\Subjects\SubjectTransformer;
+use DawWiki\Activities\ActivityTransformer;
 use League\Fractal\TransformerAbstract;
 
 class TopicTransformer extends TransformerAbstract
 {
     protected $availableEmbeds = [
-        'subject'
+        'subject',
+        'activities'
     ];
 
     /**
@@ -34,5 +36,12 @@ class TopicTransformer extends TransformerAbstract
         $subject = $topic->subject;
 
         return $this->item($subject, new SubjectTransformer);
+    }
+
+    public function embedActivities(Topic $topic)
+    {
+        $activities = $topic->activities;
+
+        return $this->collection($activities, new ActivityTransformer);
     }
 }
