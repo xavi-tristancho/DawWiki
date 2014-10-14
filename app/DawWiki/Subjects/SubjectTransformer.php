@@ -2,7 +2,6 @@
 
 use DawWiki\Topics\TopicTransformer;
 use League\Fractal\TransformerAbstract;
-use DawWiki\Subjects\Subject;
 
 class SubjectTransformer extends TransformerAbstract
 {
