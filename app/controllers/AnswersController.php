@@ -22,8 +22,9 @@ class AnswersController extends ApiController {
 	 */
 	public function index()
 	{
-		$answer = Answer::all();
-		return $this->respondWithCollection($answer, new AnswerTransformer);
+		$answers = Answer::all();
+
+		return $this->respondWithCollection($answers, new AnswerTransformer);
 	}
 
 	public function show($id){

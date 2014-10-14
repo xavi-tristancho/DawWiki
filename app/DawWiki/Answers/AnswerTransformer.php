@@ -14,18 +14,16 @@ class AnswerTransformer extends TransformerAbstract
     /**
      * Turn this item object into a generic array
      *
-     * @param Anwer $answer
+     * @param Answer $answer
      * @return array
      */
     public function transform(Answer $answer)
     {
-        //dd($answer);
-
         return [
             'id'           => (int) $answer->id,
-            'activity_id'   => (int) $answer->activity_id,
-            'user_id'         => $answer->user_id,
-            'statement'         => $answer->statement
+            'activity_id'  => (int) $answer->activity_id,
+            'user_id'      => $answer->user_id,
+            'statement'    => $answer->statement
         ];
     }
 
@@ -34,16 +32,16 @@ class AnswerTransformer extends TransformerAbstract
      *
      * @return League\Fractal\Resource\Item
      */
-    public function embedActivity(Answer $answers)
+    public function embedActivity(Answer $answer)
     {
-        $activity = $answers->activity;
+        $activity = $answer->activity;
 
         return $this->item($activity, new ActivityTransformer);
     }
 
-    public function embedUser(Answer $answers)
+    public function embedUser(Answer $answer)
     {
-        $user = $answers->user;
+        $user = $answer->user;
 
         return $this->item($user, new UserTransformer);
     }

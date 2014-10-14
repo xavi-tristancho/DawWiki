@@ -2,7 +2,9 @@
 
 class Topic extends \Eloquent {
 	protected $fillable = ['subject_id', 'name'];
-	protected function activities () {
+
+	protected function activities ()
+	{
 		return $this->hasMany('DawWiki\Activities\Activity');
 	}
 

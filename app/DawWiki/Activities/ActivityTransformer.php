@@ -28,8 +28,9 @@ class ActivityTransformer extends TransformerAbstract
     }
 
     /**
-     * Embed Place
+     * Embed Topic
      *
+     * @param Activity $activity
      * @return League\Fractal\Resource\Item
      */
     public function embedTopic(Activity $activity)
@@ -43,6 +44,6 @@ class ActivityTransformer extends TransformerAbstract
     {
         $answers = $activity->answers;
 
-        return $this->item($answers, new AnswerTransformer);
+        return $this->collection($answers, new AnswerTransformer);
     }
 }

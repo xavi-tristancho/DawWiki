@@ -7,7 +7,7 @@ class ShareTransformer extends TransformerAbstract
     /**
      * Turn this item object into a generic array
      *
-     * @param Share $subject
+     * @param Share $share
      * @return array
      */
     public function transform(Share $share)
