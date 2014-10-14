@@ -2,8 +2,16 @@
 
 use DawWiki\Subjects\Subject;
 use DawWiki\Subjects\SubjectTransformer;
+use League\Fractal\Manager;
 
 class SubjectsController extends ApiController {
+
+	public function __construct()
+	{
+		parent::__construct(new Manager);
+		//Limit the users who can do more than read operations
+		$this->beforeFilter('role:admin', ['on' => ['post', 'put', 'patch', 'delete']]);
+	}
 
 	/**
 	 * Display a listing of the resource.
@@ -25,5 +33,27 @@ class SubjectsController extends ApiController {
 		$subject = Subject::where('name', '=', $name)->get();
 
 		return $this->respondWithCollection($subject, new SubjectTransformer);
+	}
+
+	public function store()
+	{
+		$inputs = Input::all();
+
+		return Subject::create($inputs);
+	}
+
+	public function update($id){
+
+		$subject = Subject::find($id);
+		$inputs = Input::all();
+
+		$subject->name = $inputs['name'];
+
+		$subject->save();
+	}
+
+	public function destroy($id){
+
+		return Subject::destroy($id);
 	}
 }

@@ -2,8 +2,16 @@
 
 use DawWiki\Shares\Share;
 use DawWiki\Shares\ShareTransformer;
+use League\Fractal\Manager;
 
 class SharesController extends ApiController {
+
+	public function __construct()
+	{
+		parent::__construct(new Manager);
+		//Limit the users who can do more than read operations
+		$this->beforeFilter('role:admin', ['on' => ['post', 'put', 'patch', 'delete']]);
+	}
 
 	/**
 	 * Display a listing of the resource.
