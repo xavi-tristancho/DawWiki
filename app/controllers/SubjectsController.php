@@ -30,9 +30,9 @@ class SubjectsController extends ApiController {
 
 		$name = ucfirst(str_replace('-', ' ', $name));
 
-		$subject = Subject::where('name', '=', $name)->get();
+		$subject = Subject::where('name', '=', $name)->get()->first();
 
-		return $this->respondWithCollection($subject, new SubjectTransformer);
+		return $this->respondWithItem($subject, new SubjectTransformer);
 	}
 
 	public function store()
