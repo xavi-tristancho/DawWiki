@@ -38,7 +38,16 @@ class AnswersController extends ApiController {
 	{
 		$inputs = Input::all();
 
-		return Answer::create($inputs);
+		if($inputs['statement'] != '')
+		{
+			return Answer::create([
+				'activity_id' => $inputs['activity_id'],
+				'user_id'     => Auth::user()->id,
+				'statement'   => $inputs['statement']
+			]);
+		}
+
+		return $this->errorWrongArgs();
 	}
 
 	public function update($id){

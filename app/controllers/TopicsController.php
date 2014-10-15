@@ -43,14 +43,16 @@ class TopicsController extends ApiController {
 	 * Display the specified resource.
 	 * GET /topics/{id}
 	 *
-	 * @param  int  $id
+	 * @param $name
 	 * @return Response
 	 */
-	public function show($id)
-	{
-		$topic = Topic::find($id);
-		
-		return $this->respondWithItem($topic, new TopicTransformer);
+	public function show($name){
+
+		$name = ucfirst(str_replace('-', ' ', $name));
+
+		$subject = Topic::where('name', '=', $name)->get()->first();
+
+		return $this->respondWithItem($subject, new TopicTransformer);
 	}
 
 	/**
