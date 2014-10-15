@@ -1,10 +1,14 @@
-'use strict';
+(function(){
 
-angular.module('app')
-  .filter('spacesToDashes', function () {
-    return function (text) {
-		
-		var str = text.replace(/\s+/g, '-');
-		return str.toLowerCase();
-    };
-  });
+	'use strict';
+
+	angular.module('app')
+	  .filter('spacesToDashes', function () {
+	    return function (text) {
+			
+			if(text != undefined)
+				return text.replace(/\s+/g, '-').toLowerCase();
+	    };
+	  });
+
+})();
