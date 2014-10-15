@@ -3,4 +3,5 @@
 .env.php
 /vendor
 .idea
+app/database/production.sqlite
 composer.lock
