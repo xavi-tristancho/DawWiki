@@ -20,10 +20,10 @@ class ActivityTransformer extends TransformerAbstract
     public function transform(Activity $activity)
     {
         return [
-            'id'           => (int) $activity->id,
-            'topic_id'   => (int) $activity->topic_id,
-            'title'         => $activity->title,
-            'statement'         => $activity->statement
+            'id'        => (int) $activity->id,
+            'topic_id'  => (int) $activity->topic_id,
+            'title'     => $activity->title,
+            'statement' => $activity->statement
         ];
     }
 
