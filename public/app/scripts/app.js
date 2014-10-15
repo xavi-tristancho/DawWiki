@@ -9,18 +9,28 @@ angular.module('app', ['restangular', 'ngRoute'])
       })
       .when('/subjects', {
         templateUrl: 'app/views/subjects/index.html',
-        controller: 'SubjectsCtrl',
+        controller: 'AllSubjectsCtrl',
         controllerAs: 'subjects'
       })
-      .when('/subjects/:name', {
+      .when('/subjects/:subject', {
         templateUrl: 'app/views/subjects/show.html',
         controller: 'ShowSubjectsCtrl',
         controllerAs: 'subjects'
       })
-      .when('/subjects/:name/topics/:topic', {
+      .when('/subjects/:subject/topics/:topic', {
         templateUrl: 'app/views/topics/show.html',
-        controller: 'ShowSubjectsCtrl',
-        controllerAs: 'subjects'
+        controller: 'ShowTopicsCtrl',
+        controllerAs: 'topics'
+      })
+      .when('/subjects/:subject/topics/:topic/activities/:activity', {
+        templateUrl: 'app/views/activities/show.html',
+        controller: 'ShowActivitiesCtrl',
+        controllerAs: 'activities'
+      })
+      .when('/subjects/:subject/topics/:topic/activities/:activity/answers/create', {
+        templateUrl: 'app/views/answers/create.html',
+        controller: 'CreateAnswersCtrl',
+        controllerAs: 'answers'
       })
       .when('/shares', {
         templateUrl: 'app/views/shares/index.html',
