@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-md-12">
+    <h2>Afegeix una nova Resposta:</h2>
+  </div>
+  <div class="col-md-12">
+    <form ng-submit="answers.createAnswerObject()" class="form-horizontal" role="form">
+      <textarea ng-model='answers.newAnswerObject.statement' class="form-control" rows="5"></textarea>
+      <div class="form-group">
+        <div class="col-md-12">
+          <button style="margin-top:10px" type="submit" class="btn btn-success">Afegeix</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

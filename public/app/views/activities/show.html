@@ -1,0 +1,30 @@
+<div class="row">
+	<div class="col-md-12">
+		<ol class="breadcrumb">
+		  <li><a href="#/subjects">Assignatures</a></li>	
+		  <li><a href="#/subjects/{{ activities.activity.topic.data.subject.data.name | spacesToDashes}}">{{ activities.activity.topic.data.subject.data.name }}</a></li>
+		  <li>Temes</li>
+		  <li><a href="#/subjects/{{ activities.activity.topic.data.subject.data.name | spacesToDashes}}/topics/{{ activities.activity.topic.data.name | spacesToDashes}}/">{{ activities.activity.topic.data.name }}</a></li>
+		  <li>Activitats</li>
+		  <li class="active">{{ activities.activity.title }}</li>
+		</ol>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-12">
+		<a href="#{{ activities.route }}/answers/create"><button type="button" class="btn btn-success">Nova Resposta</button></a>
+		<h3>{{ activities.activity.title }}: </h3><h4><p>{{ activities.activity.statement }}</p></h4>
+	</div>
+</div>
+<hr>
+<div class="row">
+	<div class="col-md-12">
+		<h4>Respostes: </h4>
+	</div>
+</div>
+<div ng-repeat="answer in activities.activity.answers.data" class="row">
+	<div class="col-md-12">
+		<p><b>@{{ answer.user.data.username }}:</b></p>
+		<p>{{answer.statement}}</p>
+	</div>
+</div>
