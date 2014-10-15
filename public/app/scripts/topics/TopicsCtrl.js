@@ -1,15 +1,20 @@
 (function(){
 
+  'use strict';
+
   angular.module('app')
-    .controller('ShowTopicsCtrl' , ShowTopicsCtrl);
+    .controller('ShowTopicsCtrl', ShowTopicsCtrl);
 
-    function ShowTopicsCtrl($http, $routeParams){
+    function ShowTopicsCtrl($routeParams, Topics) {
 
-        var vm = this;
+      var vm = this;
 
-        $http.get('api/subjects/' + $routeParams.name + '?embed=topics').success(function(data){
+      vm.topic = {};
 
-          vm.subject = data.data[0];
+      Topics.withActivities($routeParams.topic)
+        .then(function(data)
+        {
+          vm.topic = data.data;
         });
     }
 
