@@ -17,6 +17,13 @@ class UsersTableSeeder extends Seeder {
 				'role' => 'member'
 			]);
 		}
+
+		User::create([
+			'username' => 'admin',
+			'email' => 'admin@admin.com',
+			'password' => 'admin',
+			'role' => 'admin'
+		]);
 	}
 
 }

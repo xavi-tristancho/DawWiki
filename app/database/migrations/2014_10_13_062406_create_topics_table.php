@@ -16,7 +16,7 @@ class CreateTopicsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->integer('subject_id')->unsigned();
-			$table->string('name');
+			$table->string('name')->unique();
 			$table->timestamps();
 		});
 	}

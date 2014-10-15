@@ -13,7 +13,7 @@ class AnswersTableSeeder extends Seeder {
 		$users = User::lists('id');
 		$activities = Activity::lists('id');
 
-		foreach(range(1, 10) as $index)
+		foreach(range(1, 200) as $index)
 		{
 			Answer::create([
 				'user_id' => $faker->randomElement($users),

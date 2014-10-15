@@ -11,12 +11,16 @@ class TopicsTableSeeder extends Seeder {
 		$faker = Faker::create();
 		$subjects =  Subject::lists('id');
 
-		foreach(range(1, 10) as $index)
+		foreach($subjects as $subject)
 		{
-			Topic::create([
-				'subject_id' => $faker->randomElement($subjects),
-				'name' => 'Tema ' . $index
-			]);
+			for($i=1; $i<=$faker->numberBetween(4,10); $i++)
+			{
+				Topic::create([
+					'subject_id' => $subject,
+					'name' => 'Tema ' . $i . ' ' . $faker->word() . $i . $faker->word()
+				]);
+			}
+
 		}
 	}
 

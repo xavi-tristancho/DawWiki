@@ -11,13 +11,16 @@ class ActivitiesTableSeeder extends Seeder {
 		$faker = Faker::create();
 		$topics = Topic::lists('id');
 
-		foreach(range(1, 10) as $index)
+		foreach($topics as $topic)
 		{
-			Activity::create([
-				'topic_id' => $faker->randomElement($topics),
-				'title' => 'Activitat ' . $index,
-				'statement' => $faker->sentence(6)
-			]);
+			for($i=1; $i<=$faker->numberBetween(4,10); $i++) {
+
+				Activity::create([
+					'topic_id' => $topic,
+					'title' => 'Activitat ' . $i,
+					'statement' => $faker->sentence(6)
+				]);
+			}
 		}
 	}
 
