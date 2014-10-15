@@ -1,25 +1,33 @@
 (function(){
 
-  angular.module('app')
-    .controller('SubjectsCtrl', SubjectsCtrl)
-    .controller('ShowSubjectsCtrl' , ShowSubjectsCtrl);
+  'use strict';
 
-    function SubjectsCtrl($http) {
+  angular.module('app')
+    .controller('AllSubjectsCtrl', SubjectsCtrl)
+    .controller('ShowSubjectsCtrl', ShowSubjectsCtrl);
+
+    function SubjectsCtrl(Subjects) {
 
       var vm = this;
 
-      $http.get('api/subjects').success(function(data){
+      vm.allSubjects = {};
 
-        vm.subjectsList = data.data;
-      });
+      Subjects.all()
+        .then(function(data)
+        {
+          vm.allSubjects = data.data;
+        });
     }
 
-    function ShowSubjectsCtrl($http, $routeParams){
+    function ShowSubjectsCtrl($routeParams, Subjects) {
 
-        var vm = this;
+      var vm = this;
 
-        $http.get('api/subjects/' + $routeParams.name + '?embed=topics').success(function(data){
+      vm.subject = {};
 
+      Subjects.withTopics($routeParams.subject)
+        .then(function(data)
+        {
           vm.subject = data.data;
         });
     }
