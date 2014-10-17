@@ -7,6 +7,11 @@ angular.module('app', ['restangular', 'ngRoute'])
         templateUrl: 'app/partials/dashboard.html',
         controller: 'DashboardCtrl'
       })
+      .when('/users/create', {
+        templateUrl: 'app/views/users/create.html',
+        controller: 'CreateUsersCtrl',
+        controllerAs: 'users'
+      })
       .when('/subjects', {
         templateUrl: 'app/views/subjects/index.html',
         controller: 'AllSubjectsCtrl',

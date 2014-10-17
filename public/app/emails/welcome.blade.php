@@ -1,0 +1,1 @@
+<p>La teva contrassenya es {{ $password }}</p>

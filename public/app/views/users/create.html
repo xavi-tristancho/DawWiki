@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-md-12">
+    <h2>Afegeix un nou Usuari:</h2>
+  </div>
+  <div class="col-md-12">
+    <form ng-submit="users.createUserObject()" class="form-horizontal" role="form">
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Nom d'usuari</label>
+        <div class="col-sm-10">
+          <input ng-model="users.newUserObject.username" type="Nom d'usuari" class="form-control" placeholder="Nom d'usuari">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Email</label>
+        <div class="col-sm-10">
+          <input ng-model="users.newUserObject.email" type="Email" class="form-control" placeholder="Email">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Rol</label>
+        <div class="col-sm-10">
+          <select ng-model="users.newUserObject.role" class="form-control" name="" id="">
+            <option value="admin">Administrador</option>
+            <option value="member">Membre</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button ng-disabled="users.disableCreateButton" type="submit" class="btn btn-success">Afegeix</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

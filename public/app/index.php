@@ -63,6 +63,8 @@
     <script src="app/scripts/activities/ActivitiesFactory.js"></script>
     <script src="app/scripts/answers/AnswersCtrl.js"></script>
     <script src="app/scripts/answers/AnswersFactory.js"></script>
+    <script src="app/scripts/users/UsersCtrl.js"></script>
+    <script src="app/scripts/users/UsersFactory.js"></script>
     <script src="app/scripts/shares/SharesCtrl.js"></script>
     <script src="app/scripts/dashboard/DashboardCtrl.js"></script>
     <script src="app/scripts/filters/spacesToDashes.js"></script>
