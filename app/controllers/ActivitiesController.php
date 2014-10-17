@@ -1,6 +1,7 @@
 <?php
 
 use DawWiki\Activities\Activity;
+use DawWiki\Topics\Topic;
 use DawWiki\Activities\ActivityTransformer;
 use League\Fractal\Manager;
 
@@ -30,7 +31,23 @@ class ActivitiesController extends ApiController {
 
         $inputs = Input::all();
 
-        return Activity::create($inputs);
+        if($inputs['title'] != '' and $inputs['statement'] != '')
+        {
+
+            $name = ucfirst(str_replace('-', ' ', $inputs['topic']));
+
+            $topic = Topic::where('name', '=', $name)->get()->first();
+
+            return Activity::create([
+
+                'topic_id'  => $topic->id,
+                'title'     => $inputs['title'],
+                'statement' => $inputs['statement']
+            ]);
+        }
+
+        return $this->errorWrongArgs();
+
     }
 
     public function show($id){
@@ -54,6 +71,6 @@ class ActivitiesController extends ApiController {
 
     public function destroy($id){
 
-        return Activity::destroy($id);
+        $activity = Activity::destroy($id);
     }
 }
