@@ -23,8 +23,12 @@
 	</div>
 </div>
 <div ng-repeat="answer in activities.activity.answers.data" class="row">
-	<div class="col-md-12">
+	<div class="col-md-10">
 		<p><b>@{{ answer.user.data.username }}:</b></p>
 		<p>{{answer.statement}}</p>
+	</div>
+	<div ng-if="isAdmin() || isCreator(answer.user.data.email)" class="col-md-2">
+		<button type="button" class="btn btn-info btn-xs">Editar</button>
+		<button type="button" ng-click="activities.deleteAnswerObject(answer.id)" class="btn btn-danger btn-xs">Eliminar</button>
 	</div>
 </div>
