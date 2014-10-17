@@ -10,8 +10,7 @@ class AnswersController extends ApiController {
 	{
 		parent::__construct(new Manager);
 		//Limit the users who can do more than read operations
-		$this->beforeFilter('role:admin', ['on' => ['post', 'put', 'patch', 'delete']]);
-		//$this->beforeFilter('role:owner', ['on' => ['post', 'put', 'patch', 'delete']]);
+		//$this->beforeFilter('role:owner', ['on' => ['put', 'patch', 'delete']]);
 	}
 
 	/**
@@ -62,6 +61,14 @@ class AnswersController extends ApiController {
 
 	public function destroy($id){
 
-		return Answer::destroy($id);
+		$answer = Answer::findOrFail($id);
+
+		// Is the user allowed to delete the answer?
+		if(Auth::user()->role == 'admin' || Auth::user()->id == $answer->user->id)
+		{
+            return Answer::destroy($id);
+        }
+
+		return $this->errorForbidden();
 	}
 }
