@@ -9,7 +9,8 @@ Route::get('/', function()
 //Rutes per mostrar la api
 Route::group(array('prefix' => 'api'), function() {
 
-	Route::resource('me', 'UsersController@me');
+	Route::get('me', 'UsersController@me');
+	Route::resource('users', 'UsersController');
 	Route::resource('subjects', 'SubjectsController');
 	Route::resource('shares', 'SharesController');
 	Route::resource('topics', 'TopicsController');
