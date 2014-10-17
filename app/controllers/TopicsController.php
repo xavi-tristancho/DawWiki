@@ -1,6 +1,7 @@
 <?php
 
 use DawWiki\Topics\Topic;
+use DawWiki\Subjects\Subject;
 use DawWiki\Topics\TopicTransformer;
 use League\Fractal\Manager;
 
@@ -36,7 +37,21 @@ class TopicsController extends ApiController {
 	{
 		$inputs = Input::all();
 		 
-		return Topic::create($inputs);
+		if($inputs['name'] != '')
+		{
+
+			$name = ucfirst(str_replace('-', ' ', $inputs['subject']));
+
+			$subject = Subject::where('name', '=', $name)->get()->first();
+
+			Topic::create([
+
+				'subject_id' => $subject->id,
+				'name'       => ucfirst(strtolower($inputs['name']))
+			]);
+		}
+
+		return $this->errorWrongArgs();
 	}
 
 	/**
