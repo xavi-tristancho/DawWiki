@@ -20,7 +20,19 @@
     					console.log(error);
     					return error;
     				});
-    		}
+    		},
+            destroy : function(id)
+            {
+                return $http.delete('api/answers/' + id)
+                    .then(function(data)
+                    {
+                        return data.data;
+                    }, function(error)
+                    {
+                        console.log(error);
+                        return error;
+                    });
+            }
     	}
     }
 })();
