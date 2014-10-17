@@ -6,7 +6,7 @@ class SubjectsTableSeeder extends Seeder {
 
 	private $subjects = [
 
-		'Empresa emprenedora',
+		'Empresa i iniciativa emprenedora',
 		'Desenvolupament web servidor',
 		'Desenvolupament web client',
 		'Desplegament d\'aplicacions',
