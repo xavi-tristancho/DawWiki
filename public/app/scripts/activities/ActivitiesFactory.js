@@ -20,7 +20,19 @@
     					console.log(error);
     					return error;
     				});
-    		}
+    		},
+            create : function(newActivityObject)
+            {
+                return $http.post('api/activities', newActivityObject)
+                    .then(function(data)
+                    {
+                        return data.data;
+                    }, function(error)
+                    {
+                        console.log(error);
+                        return error;
+                    });
+            }
     	}
     }
 })();
