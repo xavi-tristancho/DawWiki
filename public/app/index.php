@@ -22,7 +22,7 @@
     <script src="app/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
   </head>
-  <body>
+  <body ng-controller="ApplicationCtrl">
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -30,7 +30,6 @@
     <div ng-include="'app/partials/navbar.html'"></div>
 
     <div class="container" ng-view></div>
-
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
@@ -54,6 +53,15 @@
 
     <!-- build:js({app,.tmp}) scripts/main.js -->
     <script src="app/scripts/app.js"></script>
+
+    <script src="app/scripts/auth/ApplicationCtrl.js"></script>
+    <script src="app/scripts/auth/LoginCtrl.js"></script>
+    <script src="app/scripts/auth/SessionService.js"></script>
+    <script src="app/scripts/auth/AuthService.js"></script>
+    <script src="app/scripts/auth/AuthInterceptor.js"></script>
+    <script src="app/scripts/auth/AuthEvents.js"></script>
+    <script src="app/scripts/auth/LoginDirective.js"></script>
+
     <script src="app/scripts/navbar/NavbarCtrl.js"></script>
     <script src="app/scripts/subjects/SubjectsCtrl.js"></script>
     <script src="app/scripts/subjects/SubjectsFactory.js"></script>

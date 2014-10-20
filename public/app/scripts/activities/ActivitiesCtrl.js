@@ -27,8 +27,6 @@
 
       vm.deleteAnswerObject = function(id)
       {
-        console.log(id);
-
         Answers.destroy(id)
           .then(function(data)
           {

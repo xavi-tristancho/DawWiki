@@ -27,8 +27,7 @@
 		<p><b>@{{ answer.user.data.username }}:</b></p>
 		<p>{{answer.statement}}</p>
 	</div>
-	<div ng-if="isAdmin() || isCreator(answer.user.data.email)" class="col-md-2">
-		<button type="button" class="btn btn-info btn-xs">Editar</button>
+	<div ng-if="isAuthorized(userRoles.admin) || isCreator(answer.user.data.id)" class="col-md-2">
 		<button type="button" ng-click="activities.deleteAnswerObject(answer.id)" class="btn btn-danger btn-xs">Eliminar</button>
 	</div>
 </div>

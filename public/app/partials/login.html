@@ -1,0 +1,14 @@
+<form ng-submit="login(credentials)" class="form-signin" role="form">
+
+    <h2 class="form-signin-heading">Inicia Sessió</h2>
+
+    <input type="email" ng-model="credentials.email" class="form-control" placeholder="Email" required autofocus>
+    <input type="password" ng-model="credentials.password" class="form-control" placeholder="Contrassenya" required>
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar Sessió</button>
+</form>
+
+<div ng-show="loginFailed" class="alert alert-danger form-signin">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	<strong>Credencials invàlides</strong>
+</div>

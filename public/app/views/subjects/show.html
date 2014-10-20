@@ -6,7 +6,7 @@
 		</ol>
 	</div>
 	<div class="col-md-6">
-		<a ng-if="isAdmin()" href="#/subjects/{{ subjects.subject.name | spacesToDashes }}/topics/create"><button type="button" class="btn btn-success">Afegir Tema</button></a>
+		<a ng-if="isAuthorized(userRoles.admin)" href="#/subjects/{{ subjects.subject.name | spacesToDashes }}/topics/create"><button type="button" class="btn btn-success">Afegir Tema</button></a>
 		<h4>Temes:</h4>
 		<ul class="list-group">
 			<li class="list-group-item" ng-repeat="topic in subjects.subject.topics.data">

@@ -11,7 +11,7 @@
 
     		withAnswers : function(id)
     		{
-    			return $http.get('api/activities/' + id + '??embed=answers,answers.user,topic,topic.subject')
+    			return $http.get('api/activities/' + id + '?embed=answers,answers.user,topic,topic.subject')
     				.then(function(data)
     				{
     					return data.data;

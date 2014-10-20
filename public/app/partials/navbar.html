@@ -16,8 +16,8 @@
         <li ng-class="{ active: nav.isActive('shares') }"><a href="#/shares">Comparteix Codi</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">@{{ user.username }}</a></li>
-        <li ng-if="isAdmin()"><a href="#/users/create">Nou Usuari</a></li>
+        <li ng-show="currentUser.data.username"><a href="#">{{ "@" + currentUser.data.username }}</a></li>
+        <li ng-if="isAuthorized(userRoles.admin)"><a href="#/users/create">Nou Usuari</a></li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
