@@ -11,6 +11,7 @@ class ActivitiesController extends ApiController {
     {
         parent::__construct(new Manager);
         //Limit the users who can do more than read operations
+        $this->beforeFilter('auth');
         $this->beforeFilter('role:admin', ['on' => ['post', 'put', 'patch', 'delete']]);
     }
 

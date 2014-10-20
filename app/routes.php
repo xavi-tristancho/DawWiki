@@ -4,12 +4,13 @@
 Route::get('/', function()
 {
 	return View::make('index');
-})->before('auth.basic');
+});
 
 //Rutes per mostrar la api
 Route::group(array('prefix' => 'api'), function() {
 
-	Route::get('me', 'UsersController@me');
+	Route::get('users/me', 'UsersController@me');
+	Route::resource('sessions', 'SessionsController');
 	Route::resource('users', 'UsersController');
 	Route::resource('subjects', 'SubjectsController');
 	Route::resource('shares', 'SharesController');

@@ -12,6 +12,13 @@ class UsersTableSeeder extends Seeder {
 			'password' => 'admin',
 			'role' => 'admin'
 		]);
+
+		User::create([
+			'username' => 'member',
+			'email' => 'member@member.com',
+			'password' => 'member',
+			'role' => 'member'
+		]);
 	}
 
 }

@@ -22,8 +22,6 @@ class ApiController extends Controller
 		$this->fractal->setRequestedScopes(explode(',', Input::get('embed')));
 
 		$this->fireDebugFilters();
-
-		$this->beforeFilter('auth.basic');
 	}
 
 	public function fireDebugFilters()

@@ -2,7 +2,7 @@
 
 use League\Fractal\TransformerAbstract;
 
-class UserTransformer extends TransformerAbstract
+class AuthUserTransformer extends TransformerAbstract
 {
     /**
      * Turn this item object into a generic array
@@ -13,6 +13,7 @@ class UserTransformer extends TransformerAbstract
     public function transform(User $user)
     {
         return [
+            'session_id' => \Session::getId(),
             'id'         => $user->id,
             'username'   => $user->username,
             'email'      => $user->email,
