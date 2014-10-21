@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">DawWiki</a>
+      <a class="navbar-brand" href="#/">DawWiki</a>
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -16,8 +16,8 @@
         <li ng-class="{ active: nav.isActive('shares') }"><a href="#/shares">Comparteix Codi</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li ng-show="currentUser.data.username"><a href="#">{{ "@" + currentUser.data.username }}</a></li>
         <li ng-if="isAuthorized(userRoles.admin)"><a href="#/users/create">Nou Usuari</a></li>
+        <li ng-show="currentUser.username"><a href="#">{{ currentUser.username }}</a></li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
