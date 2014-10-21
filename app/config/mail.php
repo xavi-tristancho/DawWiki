@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'xavitb3@gmail.com', 'name' => 'UnderWiki'),
+	'from' => array('address' => 'xavitb3@gmail.com', 'name' => 'DawWiki'),
 
 	/*
 	|--------------------------------------------------------------------------
