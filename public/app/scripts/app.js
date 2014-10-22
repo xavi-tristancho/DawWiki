@@ -94,19 +94,27 @@ angular.module('app', ['restangular', 'ngRoute', 'ngSanitize'])
   .run(function ($rootScope, $location, AUTH_EVENTS, AuthService) {  
     $rootScope.$on('$routeChangeStart', function (event, next) {
       
-      var authorizedRoles = next.authorizedRoles;
+      AuthService.isLoggedIn()
+        .then(function(data)
+        {
+          var authorizedRoles = next.authorizedRoles;
       
-      if (!AuthService.isAuthorized(authorizedRoles)) {
-        event.preventDefault();
-        if (AuthService.isAuthenticated()) {
-          // user is not allowed
-          $rootScope.$broadcast(AUTH_EVENTS.notAuthorized);
-          window.history.back();
-        } else {
-          // user is not logged in
+          if (!AuthService.isAuthorized(authorizedRoles)) 
+          {
+            event.preventDefault();
+            
+            if (AuthService.isAuthenticated())
+            {
+              // user is not allowed
+              $rootScope.$broadcast(AUTH_EVENTS.notAuthorized);
+              window.history.back();
+            }
+          }
+
+        }, function(error)
+        {
           $location.url('/login');
           $rootScope.$broadcast(AUTH_EVENTS.notAuthenticated);
-        }
-      }
+        });
     });
   });

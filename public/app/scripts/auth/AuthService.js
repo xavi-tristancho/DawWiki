@@ -1,7 +1,7 @@
 (function(){
 
 	angular.module('app')
-	  .factory('AuthService', function ($rootScope, $http, Session) {
+	  .factory('AuthService', function ($rootScope, $http, Session, $location) {
 	    var authService = {};
 	     
 	      authService.login = function (credentials) {
@@ -14,6 +14,19 @@
 	            return res.data.data;
 	          });
 	      };
+
+	      authService.isLoggedIn = function()
+	      {
+	      	return $http
+	          .get('/api/users/me')
+	          .then(function (res) {
+
+	          	$rootScope.setCurrentUser(res.data.data);
+	            Session.create(res.data.data.session_id, res.data.data.id, res.data.data.role);
+
+	            return res.data.data;
+	          });
+	      }
 	     
 	      authService.isAuthenticated = function () {
 	        return !!Session.userId;

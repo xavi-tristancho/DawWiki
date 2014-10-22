@@ -3,14 +3,14 @@
 	angular.module('app')
 		.controller('ApplicationCtrl', ApplicationCtrl);
 
-		function ApplicationCtrl($scope, USER_ROLES, AuthService, $location, Session)
+		function ApplicationCtrl($rootScope, $scope, USER_ROLES, AuthService, $location, Session)
 		{
-			$scope.currentUser = null;
+			$rootScope.currentUser = null;
 			$scope.userRoles = USER_ROLES;
 			$scope.isAuthorized = AuthService.isAuthorized;
 
-			$scope.setCurrentUser = function (user) {
-				$scope.currentUser = user;
+			$rootScope.setCurrentUser = function (user) {
+				$rootScope.currentUser = user;
 			};
 
 			$scope.isCreator = function(userId)

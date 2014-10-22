@@ -18,6 +18,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li ng-if="isAuthorized(userRoles.admin)"><a href="#/users/create">Nou Usuari</a></li>
         <li ng-show="currentUser.username"><a href="#">{{ currentUser.username }}</a></li>
+        <li ng-if="currentUser.username"><a href="api/logout">Sortir</a></li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>

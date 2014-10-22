@@ -14,7 +14,7 @@
 
 	    	AuthService.login(credentials).then(function (user) {
 	        	$rootScope.$broadcast(AUTH_EVENTS.loginSuccess);
-	        	$scope.setCurrentUser(user);
+	        	$rootScope.setCurrentUser(user);
 	        	$location.url('/');
 	    	}, function () {
 	    		$scope.loginFailed = true;
