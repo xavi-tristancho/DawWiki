@@ -10,6 +10,7 @@ Route::get('/', function()
 Route::group(array('prefix' => 'api'), function() {
 
 	Route::get('users/me', 'UsersController@me');
+	Route::get('logout', 'SessionsController@destroy');
 	Route::resource('sessions', 'SessionsController');
 	Route::resource('users', 'UsersController');
 	Route::resource('subjects', 'SubjectsController');

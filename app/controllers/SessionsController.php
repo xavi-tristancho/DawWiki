@@ -40,6 +40,6 @@ class SessionsController extends ApiController
     {
         Auth::logout();
 
-        return $this->respondWithArray(['message' => 'Logged out successfully']);
+        return Redirect::to('/');
     }
 }
