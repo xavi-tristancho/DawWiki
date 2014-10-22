@@ -47,6 +47,7 @@
     <script src="app/bower_components/lodash/dist/lodash.compat.js"></script>
     <script src="app/bower_components/restangular/dist/restangular.js"></script>
     <script src="app/bower_components/angular-route/angular-route.js"></script>
+    <script src="app/bower_components/angular-sanitize/angular-sanitize.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -54,6 +55,7 @@
     <!-- build:js({app,.tmp}) scripts/main.js -->
     <script src="app/scripts/app.js"></script>
 
+    <!-- Auth -->
     <script src="app/scripts/auth/ApplicationCtrl.js"></script>
     <script src="app/scripts/auth/LoginCtrl.js"></script>
     <script src="app/scripts/auth/SessionService.js"></script>
@@ -62,19 +64,34 @@
     <script src="app/scripts/auth/AuthEvents.js"></script>
     <script src="app/scripts/auth/LoginDirective.js"></script>
 
+    <!-- Partials -->
+    <script src="app/scripts/dashboard/DashboardCtrl.js"></script>
     <script src="app/scripts/navbar/NavbarCtrl.js"></script>
+
+    <!-- Subjects -->
     <script src="app/scripts/subjects/SubjectsCtrl.js"></script>
     <script src="app/scripts/subjects/SubjectsFactory.js"></script>
+
+    <!-- Topics -->
     <script src="app/scripts/topics/TopicsCtrl.js"></script>
     <script src="app/scripts/topics/TopicsFactory.js"></script>
+
+    <!-- Activities -->
     <script src="app/scripts/activities/ActivitiesCtrl.js"></script>
     <script src="app/scripts/activities/ActivitiesFactory.js"></script>
+
+    <!-- Answers -->
     <script src="app/scripts/answers/AnswersCtrl.js"></script>
     <script src="app/scripts/answers/AnswersFactory.js"></script>
+
+    <!-- Users -->
     <script src="app/scripts/users/UsersCtrl.js"></script>
     <script src="app/scripts/users/UsersFactory.js"></script>
+
+    <!-- Shares -->
     <script src="app/scripts/shares/SharesCtrl.js"></script>
-    <script src="app/scripts/dashboard/DashboardCtrl.js"></script>
+
+    <!-- Filters -->
     <script src="app/scripts/filters/spacesToDashes.js"></script>
 
     <!-- inject:partials -->

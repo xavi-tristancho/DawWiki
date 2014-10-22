@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app', ['restangular', 'ngRoute'])
+angular.module('app', ['restangular', 'ngRoute', 'ngSanitize'])
   .config(function ($routeProvider, USER_ROLES) {
     $routeProvider
       .when('/', {
@@ -91,8 +91,9 @@ angular.module('app', ['restangular', 'ngRoute'])
       }
     ]);
   })
-  .run(function ($rootScope, $location, AUTH_EVENTS, AuthService) {    
+  .run(function ($rootScope, $location, AUTH_EVENTS, AuthService) {  
     $rootScope.$on('$routeChangeStart', function (event, next) {
+      
       var authorizedRoles = next.authorizedRoles;
       
       if (!AuthService.isAuthorized(authorizedRoles)) {
