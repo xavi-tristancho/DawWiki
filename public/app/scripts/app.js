@@ -6,6 +6,7 @@ angular.module('app', ['restangular', 'ngRoute', 'ngSanitize'])
       .when('/', {
         templateUrl: 'app/partials/dashboard.html',
         controller: 'DashboardCtrl',
+        controllerAs: 'dashboard',
         authorizedRoles : [USER_ROLES.member, USER_ROLES.admin]
       })
       .when('/login', {
@@ -107,7 +108,7 @@ angular.module('app', ['restangular', 'ngRoute', 'ngSanitize'])
             {
               // user is not allowed
               $rootScope.$broadcast(AUTH_EVENTS.notAuthorized);
-              window.history.back();
+              $location.url('/login');
             }
           }
 

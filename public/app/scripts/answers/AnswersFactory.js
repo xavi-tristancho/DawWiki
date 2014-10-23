@@ -32,6 +32,18 @@
                         console.log(error);
                         return error;
                     });
+            },
+            latest: function()
+            {
+                return $http.get('api/answers?embed=activity,activity.topic,activity.topic.subject')
+                    .then(function(data)
+                    {
+                        return data.data;
+                    }, function(error)
+                    {
+                        console.log(error);
+                        return error;
+                    });
             }
     	}
     }

@@ -93,6 +93,7 @@
 
     <!-- Filters -->
     <script src="app/scripts/filters/spacesToDashes.js"></script>
+    <script src="app/scripts/filters/limitString.js"></script>
 
     <!-- inject:partials -->
     <!-- angular templates will be automaticaly converted in js and inserted here -->
