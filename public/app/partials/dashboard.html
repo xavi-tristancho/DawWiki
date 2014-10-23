@@ -4,6 +4,7 @@
 		<ul class="list-group" >
 			<li class="list-group-item" ng-repeat="activity in dashboard.activities">
 				{{ activity.topic.data.subject.data.name }}
+				<span class="pull-right">{{ activity.user.data.username }}</span>
 				<br>
 				{{ activity.topic.data.name }}
 				<br>
@@ -16,6 +17,7 @@
 		<ul class="list-group" >
 			<li class="list-group-item" ng-repeat="answer in dashboard.answers">
 				{{ answer.activity.data.topic.data.subject.data.name }}
+				<span class="pull-right">{{ answer.user.data.username }}</span>
 				<br>
 				{{ answer.activity.data.topic.data.name }}
 				<br>

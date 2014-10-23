@@ -35,7 +35,7 @@
             },
             latest: function()
             {
-                return $http.get('api/answers?embed=activity,activity.topic,activity.topic.subject')
+                return $http.get('api/answers?embed=user,activity,activity.topic,activity.topic.subject')
                     .then(function(data)
                     {
                         return data.data;
