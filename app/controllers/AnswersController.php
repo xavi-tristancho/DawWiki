@@ -21,7 +21,7 @@ class AnswersController extends ApiController {
 	 */
 	public function index()
 	{
-		$answers = Answer::all();
+		$answers = Answer::orderBy('created_at', 'desc')->take(5)->get();
 
 		return $this->respondWithCollection($answers, new AnswerTransformer);
 	}

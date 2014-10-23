@@ -23,7 +23,7 @@ class ActivitiesController extends ApiController {
      */
     public function index()
     {
-        $activities = Activity::all();
+        $activities = Activity::orderBy('created_at', 'desc')->take(5)->get();
 
         return $this->respondWithCollection($activities, new ActivityTransformer);
     }
