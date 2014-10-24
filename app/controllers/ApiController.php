@@ -152,4 +152,16 @@ class ApiController extends Controller
 	{
 		return $this->setStatusCode(400)->respondWithError($message, self::CODE_WRONG_ARGS);
 	}
+
+	protected function iAmCreator($answer)
+	{
+		return $answer->user->id == Auth::user()->id;
+	}
+
+	protected function IamAdminWhoWroteThis($answer)
+	{
+		if (Auth::user()->role == 'admin') {
+			return $this->iAmCreator($answer);
+		}
+	}
 }
