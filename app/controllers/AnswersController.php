@@ -64,7 +64,7 @@ class AnswersController extends ApiController {
 		$answer = Answer::findOrFail($id);
 
 		// Is the user allowed to delete the answer?
-		if(Auth::user()->role == 'admin' || Auth::user()->id == $answer->user->id)
+		if((Auth::user()->role == 'admin' || Auth::user()->id == $answer->user->id) && $answer->user->role != 'admin')
 		{
             return Answer::destroy($id);
         }
