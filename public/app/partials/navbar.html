@@ -10,7 +10,7 @@
       </button>
       <a class="navbar-brand" href="#/">DawWiki</a>
     </div>
-    <div class="navbar-collapse collapse">
+    <div ng-if="isAuthorized(userRoles.admin)" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li ng-class="{ active: nav.isActive('subjects') }"><a href="#/subjects">Assignatures</a></li>
         <li ng-class="{ active: nav.isActive('shares') }"><a href="#/shares">Comparteix Codi</a></li>
