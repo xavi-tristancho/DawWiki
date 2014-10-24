@@ -13,9 +13,19 @@
 				$rootScope.currentUser = user;
 			};
 
-			$scope.isCreator = function(userId)
+			$scope.iAmCreator = function(answer)
 			{
-				return (userId == Session.userId);
+				return (answer.user.data.id == Session.userId);
+			}
+
+			$scope.iAmAdminWhoWroteThis = function(answer)
+			{
+				if(this.iAmCreator(answer))
+				{
+					return (answer.user.data.id == Session.userId)
+				}
+
+				return false;
 			}
 		}
 })();
