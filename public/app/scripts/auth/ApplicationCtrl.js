@@ -27,5 +27,10 @@
 
 				return false;
 			}
+
+			$scope.writedByAMember = function (answer)
+			{
+				return (answer.user.data.role == USER_ROLES.member);
+			}
 		}
 })();
