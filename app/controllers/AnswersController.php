@@ -64,7 +64,7 @@ class AnswersController extends ApiController {
 		$answer = Answer::findOrFail($id);
 
 		// Is the user allowed to delete the answer?
-		if($this->iAmAdminWhoWroteThis($answer) || $this->iAmCreator($answer))
+		if($this->iAmAdminWhoWroteThis($answer) || $this->iAmCreator($answer) || $this->writedByAMember($answer))
 		{
 				return Answer::destroy($id);
         }

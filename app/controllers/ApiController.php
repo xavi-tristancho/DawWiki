@@ -164,4 +164,9 @@ class ApiController extends Controller
 			return $this->iAmCreator($answer);
 		}
 	}
+
+	protected function writedByAMember($answer)
+	{
+		return $answer->user->role == 'member';
+	}
 }
