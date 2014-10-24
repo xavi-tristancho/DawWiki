@@ -27,7 +27,7 @@
 		<p><b>@{{ answer.user.data.username }}:</b></p>
 		<p ng-bind-html="answer.statement | linky:'_blank'"></p>
 	</div>
-	<div ng-if="isAuthorized(userRoles.admin) || isCreator(answer.user.data.id)" class="col-md-2">
+	<span ng-if="(isAuthorized(userRoles.admin) || isCreator(answer.user.data.id)) && answer.user.data.role != userRoles.admin" class="pull-right">
 		<button type="button" ng-click="activities.deleteAnswerObject(answer.id)" class="btn btn-danger btn-xs">Eliminar</button>
-	</div>
+	</span>
 </div>
