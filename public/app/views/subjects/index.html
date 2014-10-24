@@ -6,6 +6,7 @@
 		<ul class="list-group">
 			<li class="list-group-item" ng-repeat="subject in subjects.allSubjects">
 				<a href="#/subjects/{{ subject.name | spacesToDashes }}">{{ subject.name }}</a>
+				<span class="pull-right badge">{{ subject.topics.data.length }}</span>
 			</li>
 		</ul>
 	</div>

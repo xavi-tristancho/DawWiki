@@ -11,7 +11,7 @@
 
     		withActivities : function(id)
     		{
-    			return $http.get('api/topics/' + id + '?embed=activities,subject')
+    			return $http.get('api/topics/' + id + '?embed=activities,activities.answers,subject')
     				.then(function(data)
     				{
     					return data.data;

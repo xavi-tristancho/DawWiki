@@ -11,7 +11,7 @@
 
     		all : function()
     		{
-    			return $http.get('api/subjects')
+    			return $http.get('api/subjects?embed=topics')
     				.then(function(data)
     				{
     					return data.data;
@@ -23,7 +23,7 @@
     		},
     		withTopics : function(name)
     		{
-    			return $http.get('api/subjects/' + name + '?embed=topics')
+    			return $http.get('api/subjects/' + name + '?embed=topics,topics.activities')
     				.then(function(data)
     				{
     					return data.data;

@@ -14,6 +14,7 @@
 		<ul class="list-group">
 			<li class="list-group-item" ng-repeat="activity in topics.topic.activities.data">
 				<a href="#/subjects/{{ topics.topic.subject.data.name | spacesToDashes}}/topics/{{ topics.topic.name | spacesToDashes}}/activities/{{activity.id}}">{{activity.title}}</a>
+				<span class="pull-right badge">{{ activity.answers.data.length }}</span>
 			</li>
 		</ul>
 	</div>
