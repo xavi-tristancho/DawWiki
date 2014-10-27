@@ -12,7 +12,7 @@
 		<a ng-if="isAuthorized(userRoles.admin)" href="#/subjects/{{ topics.topic.subject.data.name | spacesToDashes}}/topics/{{ topics.topic.name | spacesToDashes}}/activities/create"><button type="button" class="btn btn-success">Afegir Activitat</button></a>
 		<h4>Activitats:</h4>
 		<ul class="list-group">
-			<li class="list-group-item" ng-repeat="activity in topics.topic.activities.data">
+			<li class="list-group-item" ng-repeat="activity in topics.topic.activities.data | orderBy: 'title'">
 				<a href="#/subjects/{{ topics.topic.subject.data.name | spacesToDashes}}/topics/{{ topics.topic.name | spacesToDashes}}/activities/{{activity.id}}">{{activity.title}}</a>
 				<span class="pull-right badge">{{ activity.answers.data.length }}</span>
 			</li>
