@@ -80,6 +80,30 @@ angular.module('app', ['restangular', 'ngRoute', 'ngSanitize', 'angular.filter']
         controllerAs: 'shares',
         authorizedRoles : [USER_ROLES.admin]
       })
+      .when('/famouses', {
+        templateUrl: 'app/views/famouses/index.html',
+        controller: 'FamousesCtrl',
+        controllerAs: 'famouses',
+        authorizedRoles : [USER_ROLES.member, USER_ROLES.admin]
+      })
+      .when('/famouses/create.html', {
+        templateUrl: 'app/views/famouses/create.html',
+        controller: 'NewFamousesCtrl',
+        controllerAs: 'famouses',
+        authorizedRoles : [USER_ROLES.admin]
+      })
+      .when('/famouses/:name/edit.html', {
+        templateUrl: 'app/views/famouses/edit.html',
+        controller: 'EditFamousesCtrl',
+        controllerAs: 'famouses',
+        authorizedRoles : [USER_ROLES.admin]
+      })
+      .when('/articles', {
+        templateUrl: 'app/views/articles/index.html',
+        controller: 'AllArticlesCtrl',
+        controllerAs: 'articles',
+        authorizedRoles : [USER_ROLES.member, USER_ROLES.admin]
+      })
       .otherwise({
         redirectTo: '/'
       });

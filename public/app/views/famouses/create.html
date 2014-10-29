@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="col-md-12">
+    <h2>Afegeix una nova Personalitat:</h2>
+  </div>
+  <div class="col-md-12">
+    <form ng-submit="famouses.createFamousObject()" class="form-horizontal" role="form">
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Nom</label>
+        <div class="col-sm-10">
+          <input ng-model="famouses.newFamousObject.name" type="text" class="form-control" placeholder="Nom">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Web</label>
+        <div class="col-sm-10">
+          <input ng-model="famouses.newFamousObject.web" type="text" class="form-control" placeholder="Web (http://)">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Foto</label>
+        <div class="col-sm-10">
+          <input ng-model="famouses.newFamousObject.photo" type="text" class="form-control" placeholder="Foto">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Descripció</label>
+        <div class="col-sm-10">
+          <input ng-model="famouses.newFamousObject.description" type="text" class="form-control" placeholder="Descripció">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Wikipedia</label>
+        <div class="col-sm-10">
+          <input ng-model="famouses.newFamousObject.wikipedia" type="text" class="form-control" placeholder="Wikipedia">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Twitter</label>
+        <div class="col-sm-10">
+          <input ng-model="famouses.newFamousObject.twitter" type="text" class="form-control" placeholder="Twitter">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Github</label>
+        <div class="col-sm-10">
+          <input ng-model="famouses.newFamousObject.github" type="text" class="form-control" placeholder="Github">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-success">Afegeix</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

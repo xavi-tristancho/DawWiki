@@ -1,0 +1,63 @@
+<div class="row">
+	<div class="col-md-12">
+		<a href="#/famouses/create.html"><button type="button" data-toggle="modal" class="btn btn-success">Nova Personalitat</button></a>
+	</div>
+</div>
+
+<div class="row famous">
+	<div class="col-md-8">
+		<ul class="event-list" ng-repeat="famous in famouses.famouses">
+    <div class="row">
+      <div ng-if="isAuthorized(userRoles.admin)" style="margin-bottom: 5px" class="col-md-12">
+        <span class="pull-right">
+          <a href="#/famouses/{{ famous.name | spacesToDashes }}/edit.html">
+            <button type="button" class="btn btn-info btn-xs">Editar</button>
+          </a>
+          <button ng-click="famouses.destroy(famous.id)" type="button" class="btn btn-danger btn-xs">Eliminar</button>
+          </span>
+      </div>
+    </div>
+		  <li>
+        <img ng-src="{{ famous.photo }}" alt="">
+        <div class="info">
+          <h2 class="title">{{ famous.name }}</h2>
+          <p class="desc">{{ famous.description}}</p>
+          <ul>
+            <li style="width:50%;">
+              <a ng-href="#/famouses/{{ famous.name | spacesToDashes }}">
+                <span class="fa fa-newspaper-o"></span>
+                 Articles
+              </a>
+            </li>
+            <li ng-if="famous.web" style="width:50%;">
+              <a ng-href="{{ famous.web }}" target="_blank">
+                <span class="fa fa-globe"></span>
+                 Pàgina Web
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="social">
+          <ul>
+            <li class="wikipedia disabled" style="width:34%;">
+              <a ng-href="{{ famous.wikipedia }}" target="_blank">
+                <span class="fa fa-wordpress"></span>
+              </a>
+            </li>
+            <li class="twitter" style="width:34%;">
+              <a ng-href="https://twitter.com/{{ famous.twitter }}" target="_blank">
+                <span class="fa fa-twitter"></span>
+              </a>
+            </li>
+            <li class="github" style="width:33%;">
+              <a ng-href="http://github.com/{{ famous.github }}" target="_blank">
+                <span class="fa fa-github"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+		</ul>
+	</div>
+</div>
+

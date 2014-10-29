@@ -9,6 +9,7 @@
 
     <!-- build:css({.tmp,app}) styles/vendor.css -->
     <link rel="stylesheet" href="app/bower_components/bootstrap/dist/css/bootstrap.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- bower:css -->
     <!-- endbower -->
@@ -84,6 +85,10 @@
     <!-- Answers -->
     <script src="app/scripts/answers/AnswersCtrl.js"></script>
     <script src="app/scripts/answers/AnswersFactory.js"></script>
+
+    <!-- Famouses -->
+    <script src="app/scripts/famouses/FamousesCtrl.js"></script>
+    <script src="app/scripts/famouses/FamousesFactory.js"></script>    
 
     <!-- Users -->
     <script src="app/scripts/users/UsersCtrl.js"></script>
