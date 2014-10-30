@@ -1,0 +1,23 @@
+<div class="row">
+	<div class="col-md-12">
+		<a href="#/articles/create.html"><button type="button" data-toggle="modal" class="btn btn-success">Nou Article</button></a>
+    <h2>Llistat complet d'articles:</h2>
+	</div>
+</div>
+
+<div class="row" style="margin-bottom:10px">
+  <div class="col-md-8">
+    <input ng-model="search" type="text" class="form-control" placeholder="Cerca">
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-8">
+    <ul class="list-group">
+      <li class="list-group-item" ng-repeat="article in articles.articles | filter:search">
+        <a ng-href="{{ article.link }}">{{ article.title }}</a>
+      </li>
+    </ul>
+  </div>
+</div>
+

@@ -104,6 +104,12 @@ angular.module('app', ['restangular', 'ngRoute', 'ngSanitize', 'angular.filter']
         controllerAs: 'articles',
         authorizedRoles : [USER_ROLES.member, USER_ROLES.admin]
       })
+      .when('/articles/create.html', {
+        templateUrl: 'app/views/articles/create.html',
+        controller: 'NewArticlesCtrl',
+        controllerAs: 'articles',
+        authorizedRoles : [USER_ROLES.member, USER_ROLES.admin]
+      })
       .otherwise({
         redirectTo: '/'
       });

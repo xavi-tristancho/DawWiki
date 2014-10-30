@@ -97,6 +97,10 @@
     <!-- Shares -->
     <script src="app/scripts/shares/SharesCtrl.js"></script>
 
+    <!-- Articles-->
+    <script src="app/scripts/articles/ArticlesCtrl.js"></script>
+    <script src="app/scripts/articles/ArticlesFactory.js"></script>        
+
     <!-- Filters -->
     <script src="app/scripts/filters/spacesToDashes.js"></script>
     <script src="app/scripts/filters/limitString.js"></script>

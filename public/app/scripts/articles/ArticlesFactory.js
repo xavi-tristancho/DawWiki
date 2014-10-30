@@ -3,15 +3,15 @@
 	'use strict';
 
 	angular.module('app')
-    .factory('Famouses', Famouses);
+    .factory('Articles', Articles);
 
-    function Famouses($http)
+    function Articles($http)
     {
     	return {
 
     		all : function()
     		{
-    			return $http.get('api/famouses')
+    			return $http.get('api/articles')
     				.then(function(data)
     				{
     					return data.data;
@@ -23,7 +23,7 @@
     		},
             create : function(newFamousObject)
             {
-                return $http.post('api/famouses', newFamousObject)
+                return $http.post('api/articles', newFamousObject)
                     .then(function(data)
                     {
                         return data.data;
@@ -35,7 +35,7 @@
             },
             show : function(name)
             {
-                return $http.get('api/famouses/' +name)
+                return $http.get('api/articles/' +name)
                     .then(function(data)
                     {
                         return data.data;
@@ -47,7 +47,7 @@
             },
             update : function(editFamousObject)
             {
-                return $http.put('api/famouses/' + editFamousObject.id, editFamousObject)
+                return $http.put('api/articles/' + editFamousObject.id, editFamousObject)
                     .then(function(data)
                     {
                         return data.data;
@@ -59,7 +59,7 @@
             },
             destroy : function(id)
             {
-                return $http.delete('api/famouses/' + id)
+                return $http.delete('api/articles/' + id)
                     .then(function(data)
                     {
                         return data.data;

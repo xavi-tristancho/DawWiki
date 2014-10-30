@@ -76,8 +76,11 @@
 
       vm.updateFamousObject = function (){
 
-        $http.put('api/famouses/' + vm.editFamousObject.id, vm.editFamousObject);
-        $location.url('famouses');
+        Famouses.update(vm.editFamousObject)
+          .then(function(data)
+          {
+            $location.url('famouses');
+          });        
       }
     }
 
