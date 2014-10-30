@@ -15,7 +15,7 @@
   <div class="col-md-8">
     <ul class="list-group">
       <li class="list-group-item" ng-repeat="article in articles.articles | filter:search">
-        <a ng-href="{{ article.link }}">{{ article.title }}</a>
+        <a ng-href="{{ article.link }}" target="_blank">{{ article.title }}</a>
       </li>
     </ul>
   </div>
