@@ -22,7 +22,7 @@ class FamousesController extends ApiController {
 	 */
 	public function index()
 	{
-		$famouses = Famous::all();
+		$famouses = Famous::orderBy('name')->get();
 
 		return $this->respondWithCollection($famouses, new FamousTransformer());
 	}
