@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app', ['restangular', 'ngRoute', 'ngSanitize', 'angular.filter'])
+angular.module('app', ['restangular', 'ngRoute', 'ngSanitize', 'angular.filter', 'angularUtils.directives.dirPagination'])
   .config(function ($routeProvider, USER_ROLES) {
     $routeProvider
       .when('/', {

@@ -50,6 +50,7 @@
     <script src="app/bower_components/angular-route/angular-route.js"></script>
     <script src="app/bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="app/bower_components/angular-filter/dist/angular-filter.js"></script>
+    <script src="app/bower_components/angular-utils-pagination/dirPagination.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
