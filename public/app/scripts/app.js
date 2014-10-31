@@ -86,11 +86,17 @@ angular.module('app', ['restangular', 'ngRoute', 'ngSanitize', 'angular.filter']
         controllerAs: 'famouses',
         authorizedRoles : [USER_ROLES.member, USER_ROLES.admin]
       })
-      .when('/famouses/create.html', {
+      .when('/famouses/create', {
         templateUrl: 'app/views/famouses/create.html',
         controller: 'NewFamousesCtrl',
         controllerAs: 'famouses',
         authorizedRoles : [USER_ROLES.admin]
+      })
+      .when('/famouses/:name', {
+        templateUrl: 'app/views/famouses/show.html',
+        controller: 'ShowFamousesCtrl',
+        controllerAs: 'famouses',
+        authorizedRoles : [USER_ROLES.member, USER_ROLES.admin]
       })
       .when('/famouses/:name/edit.html', {
         templateUrl: 'app/views/famouses/edit.html',
@@ -104,9 +110,15 @@ angular.module('app', ['restangular', 'ngRoute', 'ngSanitize', 'angular.filter']
         controllerAs: 'articles',
         authorizedRoles : [USER_ROLES.member, USER_ROLES.admin]
       })
-      .when('/articles/create.html', {
+      .when('/articles/create', {
         templateUrl: 'app/views/articles/create.html',
         controller: 'NewArticlesCtrl',
+        controllerAs: 'articles',
+        authorizedRoles : [USER_ROLES.member, USER_ROLES.admin]
+      })
+      .when('/articles/:id/edit', {
+        templateUrl: 'app/views/articles/edit.html',
+        controller: 'EditArticlesCtrl',
         controllerAs: 'articles',
         authorizedRoles : [USER_ROLES.member, USER_ROLES.admin]
       })

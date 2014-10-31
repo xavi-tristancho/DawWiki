@@ -31,7 +31,6 @@
 
       vm.destroy = function(id)
       {
-        console.log(id);
         Articles.destroy(id)
           .then(function(data)
           {
@@ -64,7 +63,7 @@
     {
       var vm = this;
 
-      Articles.show($routeParams.name)
+      Articles.show($routeParams.id)
         .then(function(data)
         {
           vm.editArticleObject = data.data;
