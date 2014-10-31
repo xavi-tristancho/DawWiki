@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-md-12">
-		<a href="#/famouses/create.html"><button type="button" data-toggle="modal" class="btn btn-success">Nova Personalitat</button></a>
+		<a href="#/famouses/create"><button type="button" data-toggle="modal" class="btn btn-success">Nova Personalitat</button></a>
 	</div>
 </div>
 
@@ -10,7 +10,7 @@
     <div class="row">
       <div ng-if="isAuthorized(userRoles.admin)" style="margin-bottom: 5px" class="col-md-12">
         <span class="pull-right">
-          <a href="#/famouses/{{ famous.name | spacesToDashes }}/edit.html">
+          <a href="#/famouses/{{ famous.name | spacesToDashes }}/edit">
             <button type="button" class="btn btn-info btn-xs">Editar</button>
           </a>
           <button ng-click="famouses.destroy(famous.id)" type="button" class="btn btn-danger btn-xs">Eliminar</button>

@@ -5,6 +5,7 @@
   angular.module('app')
     .controller('FamousesCtrl', FamousesCtrl)
     .controller('NewFamousesCtrl', NewFamousesCtrl)
+    .controller('ShowFamousesCtrl', ShowFamousesCtrl)
     .controller('EditFamousesCtrl', EditFamousesCtrl);
 
     function FamousesCtrl(Famouses)
@@ -31,7 +32,6 @@
 
       vm.destroy = function(id)
       {
-        console.log(id);
         Famouses.destroy(id)
           .then(function(data)
           {
@@ -64,7 +64,18 @@
       }
     }
 
-    function EditFamousesCtrl($routeParams, $http, $location, Famouses)
+    function ShowFamousesCtrl($routeParams, Famouses)
+    {
+      var vm = this;
+
+      Famouses.show($routeParams.name)
+        .then(function(data)
+        {
+          vm.famous = data.data;
+        });
+    }
+
+    function EditFamousesCtrl($routeParams, $location, Famouses)
     {
       var vm = this;
 
@@ -74,14 +85,14 @@
           vm.editFamousObject = data.data;
         });
 
-      vm.updateFamousObject = function (){
-
+      vm.updateFamousObject = function()
+      {
         Famouses.update(vm.editFamousObject)
           .then(function(data)
           {
             $location.url('famouses');
           });        
-      }
+      };
     }
 
 })();
