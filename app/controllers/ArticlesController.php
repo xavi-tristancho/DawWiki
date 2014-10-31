@@ -70,11 +70,11 @@ class ArticlesController extends ApiController {
 		$article = Article::find($id);
 		$inputs = Input::all();
 
-		$Article->title = $inputs['title'];
-		$Article->link 	= $inputs['link'];
-		$Article->tags  = $inputs['tags'];
+		$article->title = $inputs['title'];
+		$article->link 	= $inputs['link'];
+		$article->tags  = $inputs['tags'];
 
-		$Article->save();
+		$article->save();
 	}
 
 	/**
