@@ -10,6 +10,7 @@
     <!-- build:css({.tmp,app}) styles/vendor.css -->
     <link rel="stylesheet" href="app/bower_components/bootstrap/dist/css/bootstrap.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="app/bower_components/ng-tags-input/ng-tags-input.css" rel="stylesheet">
 
     <!-- bower:css -->
     <!-- endbower -->
@@ -51,6 +52,7 @@
     <script src="app/bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="app/bower_components/angular-filter/dist/angular-filter.js"></script>
     <script src="app/bower_components/angular-utils-pagination/dirPagination.js"></script>
+    <script src="app/bower_components/ng-tags-input/ng-tags-input.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
