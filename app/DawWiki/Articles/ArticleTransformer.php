@@ -16,7 +16,12 @@ class ArticleTransformer extends TransformerAbstract
             'id'           => (int) $article->id,
             'title'         => $article->title,
             'link'          => $article->link,
-            'tags'          => $article->tags
+            'tags'          => $this->formatTags($article->tags)
         ];
+    }
+
+    private function formatTags($tags)
+    {
+        return $arrayOfTags = explode(',', $tags);
     }
 }

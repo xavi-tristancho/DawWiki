@@ -41,6 +41,8 @@ class ArticlesController extends ApiController {
 			return $this->errorWrongArgs();
 		}
 
+		$inputs['tags'] = $this->formatTags($inputs['tags']);
+
 		return Article::create($inputs);
 	}
 
@@ -70,6 +72,8 @@ class ArticlesController extends ApiController {
 		$article = Article::find($id);
 		$inputs = Input::all();
 
+		$inputs['tags'] = $this->formatTags($inputs['tags']);
+
 		$article->title = $inputs['title'];
 		$article->link 	= $inputs['link'];
 		$article->tags  = $inputs['tags'];
@@ -87,6 +91,17 @@ class ArticlesController extends ApiController {
 	public function destroy($id)
 	{
 		return Article::destroy($id);
+	}
+
+	private function formatTags($tags)
+	{
+		$formattedTags = [];
+
+		foreach ($tags as $tag) {
+			array_push($formattedTags, $tag['text']);
+		}
+
+		return implode(',', $formattedTags);
 	}
 
 }
