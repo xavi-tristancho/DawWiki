@@ -17,7 +17,7 @@ class CreateActivitiesTable extends Migration {
 			$table->increments('id');
 			$table->integer('topic_id')->unsigned();
 			$table->string('title');
-			$table->string('statement');
+			$table->text('statement');
 			$table->timestamps();
 		});
 	}
