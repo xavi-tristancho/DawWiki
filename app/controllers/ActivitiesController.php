@@ -43,6 +43,7 @@ class ActivitiesController extends ApiController {
 
                 'topic_id'  => $topic->id,
                 'title'     => $inputs['title'],
+                'category'     => $inputs['category'],
                 'statement' => $inputs['statement']
             ]);
         }
