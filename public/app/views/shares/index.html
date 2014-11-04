@@ -14,10 +14,10 @@
 						Llenguatge: <span class="badge">{{ share.language }}</span> <br>
 						Executable: {{ shares.isExecutable(share.executable) }}	
 					</div>
-					<div ng-if="isAuthorized(userRoles.admin)" class="col-md-3 col-md-offset-4">
+					<span ng-if="isAuthorized(userRoles.admin)" class="pull-right">
 						<a href="#/shares/{{ share.id }}/edit"><button type="button" class="btn btn-info btn-xs">Editar</button></a>
 						<button type="button" ng-click="shares.delteShareObject(share.id)" class="btn btn-danger btn-xs">Eliminar</button>
-					</div>
+					</span>
 				</div>
 			</li>
 		</ul>
