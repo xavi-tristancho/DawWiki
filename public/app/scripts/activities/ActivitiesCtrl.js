@@ -43,6 +43,7 @@
       vm.newActivityObject = {
         topic : $routeParams.topic,
         title : '',
+        category: '',
         statement : ''
       };
 

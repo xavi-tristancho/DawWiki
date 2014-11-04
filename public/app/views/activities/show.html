@@ -13,7 +13,7 @@
 <div class="row">
 	<div class="col-md-12">
 		<a href="#{{ activities.route }}/answers/create"><button type="button" class="btn btn-success">Nova Resposta</button></a>
-		<h3>{{ activities.activity.title }}: </h3><h4><p>{{ activities.activity.statement }}</p></h4>
+		<h3 ng-if="activities.activity.category">[{{activities.activity.category}}]</h3><h3>{{ activities.activity.title }}: </h3><h4><p>{{ activities.activity.statement }}</p></h4>
 	</div>
 </div>
 <hr>
