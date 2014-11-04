@@ -23,6 +23,7 @@ class ActivityTransformer extends TransformerAbstract
             'id'        => (int) $activity->id,
             'topic_id'  => (int) $activity->topic_id,
             'title'     => $activity->title,
+            'category'  => $activity->category,
             'statement' => $activity->statement
         ];
     }

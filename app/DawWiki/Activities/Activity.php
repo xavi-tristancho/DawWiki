@@ -2,7 +2,7 @@
 
 class Activity extends \Eloquent {
 
-	protected $fillable = ['topic_id', 'title', 'statement'];
+	protected $fillable = ['topic_id', 'title', 'category', 'statement'];
 
 	public function topic()
 	{
