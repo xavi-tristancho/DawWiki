@@ -18,7 +18,7 @@
 		
 		<ul ng-repeat="(key, value) in topics.topic.activities.data | groupBy: 'category'" >
 		  <h5>{{ key }}</h5>
-		  <li class="list-group-item" ng-repeat="activity in value">
+		  <li class="list-group-item" ng-repeat="activity in value | orderBy: 'title'">
 		    <a href="#/subjects/{{ topics.topic.subject.data.name | spacesToDashes}}/topics/{{ topics.topic.name | spacesToDashes}}/activities/{{activity.id}}">{{activity.title}}</a>
 				<span class="pull-right badge">{{ activity.answers.data.length }}</span>
 		  </li>
