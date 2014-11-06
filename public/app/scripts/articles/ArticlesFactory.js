@@ -9,21 +9,9 @@
     {
     	return {
 
-    		all : function()
-    		{
-    			return $http.get('api/articles')
-    				.then(function(data)
-    				{
-    					return data.data;
-    				}, function(error)
-    				{
-    					console.log(error);
-    					return error;
-    				});
-    		},
-            create : function(newFamousObject)
+            create : function(newArticleObject)
             {
-                return $http.post('api/articles', newFamousObject)
+                return $http.post('api/articles', newArticleObject)
                     .then(function(data)
                     {
                         return data.data;
@@ -45,9 +33,9 @@
                         return error;
                     });
             },
-            update : function(editFamousObject)
+            update : function(editArticleObject)
             {
-                return $http.put('api/articles/' + editFamousObject.id, editFamousObject)
+                return $http.put('api/articles/' + editArticleObject.id, editArticleObject)
                     .then(function(data)
                     {
                         return data.data;

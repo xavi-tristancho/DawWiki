@@ -12,8 +12,6 @@
     {
       var vm = this;
 
-      vm.famouses = {};
-
       vm.getFamouses = function()
       {
         Famouses.all()
@@ -64,15 +62,34 @@
       }
     }
 
-    function ShowFamousesCtrl($routeParams, Famouses)
+    function ShowFamousesCtrl($routeParams, Famouses, Articles)
     {
       var vm = this;
 
-      Famouses.show($routeParams.name)
+      vm.getFamous = function()
+      {
+        Famouses.show($routeParams.name)
         .then(function(data)
         {
-          vm.famous = data.data;
+          vm.setFamous(data.data);
         });
+      }
+
+      vm.getFamous();
+
+      vm.setFamous = function(famous)
+      {
+        vm.famous = famous;
+      }
+
+      vm.destroyArticle = function(id)
+      {
+        Articles.destroy(id)
+          .then(function(data)
+          {
+            vm.getFamous();
+          });
+      }
     }
 
     function EditFamousesCtrl($routeParams, $location, Famouses)

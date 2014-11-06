@@ -35,7 +35,7 @@
             },
             show : function(name)
             {
-                return $http.get('api/famouses/' +name)
+                return $http.get('api/famouses/' + name + '?embed=articles')
                     .then(function(data)
                     {
                         return data.data;

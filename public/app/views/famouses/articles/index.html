@@ -11,10 +11,12 @@
   </div>
 </div>
 
+{{ famouses.famous.articles.data }}
+
 <div class="row">
   <div class="col-md-8">
     <ul class="list-group">
-      <li class="list-group-item" dir-paginate="article in articles.articles | filter:search | itemsPerPage: 10">
+      <li class="list-group-item" dir-paginate="article in famouses.famous.articles.data">
         <a ng-href="{{ article.link }}" target="_blank">{{ article.title }}</a>
         <span class="pull-right">
           <a ng-href="#/articles/{{ article.id }}/edit">
@@ -28,4 +30,3 @@
     <dir-pagination-controls template-url="app/bower_components/angular-utils-pagination/dirPagination.tpl.html"></dir-pagination-controls>
   </div>
 </div>
-

@@ -3,50 +3,18 @@
   'use strict';
 
   angular.module('app')
-    .controller('AllArticlesCtrl', AllArticlesCtrl)
     .controller('NewArticlesCtrl', NewArticlesCtrl)
     .controller('EditArticlesCtrl', EditArticlesCtrl);
 
-    function AllArticlesCtrl(Articles)
-    {
-      var vm = this;
-
-      vm.articles = {};
-
-      vm.getArticles = function()
-      {
-        Articles.all()
-        .then(function(data)
-        {
-          vm.setArticles(data.data);
-        });
-      }
-
-      vm.getArticles();
-
-      vm.setArticles = function(Articles)
-      {
-        vm.articles = Articles;
-      }
-
-      vm.destroy = function(id)
-      {
-        Articles.destroy(id)
-          .then(function(data)
-          {
-            vm.getArticles();
-          });
-      }
-    }
-
-    function NewArticlesCtrl($location, Articles)
+    function NewArticlesCtrl($routeParams, $location, Articles)
     {
       var vm = this;
 
       vm.newArticleObject = {
         title : '',
         link : '',
-        tags : ''
+        tags : '',
+        famous_id : $routeParams.name 
       };
 
       vm.createArticleObject = function()
@@ -54,7 +22,7 @@
         Articles.create(vm.newArticleObject)
           .then(function(data)
           {
-            $location.url('articles');
+            $location.url('famouses/' + $routeParams.name);
           });
       }
     }
