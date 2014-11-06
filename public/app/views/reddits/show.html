@@ -1,0 +1,26 @@
+<div class="row">
+	<div class="col-md-12">
+	
+		<ol class="breadcrumb">
+		  <li><a href="#/reddits">Reddit's</a></li>	
+		  <li class="active">{{ reddits.reddit.name }}</li>
+		  <li>Temes actius</li>
+		</ol>
+
+		<h2>{{ reddits.reddit.name | ucfirst }} Reddit.</h2>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		
+		<ul class="list-group">
+			<li class="list-group-item" ng-repeat="post in reddits.feed">
+			 <a ng-href="http://www.reddit.com/r/{{ reddits.reddit.name}}/comments/{{ post.data.id }}" target="_blank">
+			 	{{post.data.title}}
+			 </a>
+			</li>
+		</ul>
+
+	</div>
+</div>

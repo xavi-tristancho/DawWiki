@@ -20,4 +20,5 @@ Route::group(array('prefix' => 'api'), function() {
 	Route::resource('answers', 'AnswersController');
 	Route::resource('famouses', 'FamousesController');
 	Route::resource('articles', 'ArticlesController');
+	Route::resource('reddits', 'RedditsController');
 });

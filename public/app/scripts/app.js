@@ -2,6 +2,7 @@
 
 angular.module('app', [
   'restangular',
+  'ui.bootstrap',
   'ngRoute',
   'ngSanitize',
   'angular.filter',
@@ -106,20 +107,14 @@ angular.module('app', [
         controllerAs: 'famouses',
         authorizedRoles : [USER_ROLES.member, USER_ROLES.admin]
       })
-      .when('/famouses/:name/edit.html', {
+      .when('/famouses/:name/edit', {
         templateUrl: 'app/views/famouses/edit.html',
         controller: 'EditFamousesCtrl',
         controllerAs: 'famouses',
         authorizedRoles : [USER_ROLES.admin]
       })
-      .when('/articles', {
-        templateUrl: 'app/views/articles/index.html',
-        controller: 'AllArticlesCtrl',
-        controllerAs: 'articles',
-        authorizedRoles : [USER_ROLES.member, USER_ROLES.admin]
-      })
-      .when('/articles/create', {
-        templateUrl: 'app/views/articles/create.html',
+      .when('/famouses/:name/articles/create', {
+        templateUrl: 'app/views/famouses/articles/create.html',
         controller: 'NewArticlesCtrl',
         controllerAs: 'articles',
         authorizedRoles : [USER_ROLES.member, USER_ROLES.admin]
@@ -128,6 +123,24 @@ angular.module('app', [
         templateUrl: 'app/views/articles/edit.html',
         controller: 'EditArticlesCtrl',
         controllerAs: 'articles',
+        authorizedRoles : [USER_ROLES.member, USER_ROLES.admin]
+      })
+      .when('/reddits', {
+        templateUrl: 'app/views/reddits/index.html',
+        controller: 'RedditsCtrl',
+        controllerAs: 'reddits',
+        authorizedRoles : [USER_ROLES.member, USER_ROLES.admin]
+      })
+      .when('/reddits/create', {
+        templateUrl: 'app/views/reddits/create.html',
+        controller: 'NewRedditsCtrl',
+        controllerAs: 'reddits',
+        authorizedRoles : [USER_ROLES.member, USER_ROLES.admin]
+      })
+      .when('/reddits/:name', {
+        templateUrl: 'app/views/reddits/show.html',
+        controller: 'ShowRedditsCtrl',
+        controllerAs: 'reddits',
         authorizedRoles : [USER_ROLES.member, USER_ROLES.admin]
       })
       .otherwise({

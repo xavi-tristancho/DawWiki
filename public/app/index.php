@@ -9,8 +9,8 @@
 
     <!-- build:css({.tmp,app}) styles/vendor.css -->
     <link rel="stylesheet" href="app/bower_components/bootstrap/dist/css/bootstrap.css">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="app/bower_components/ng-tags-input/ng-tags-input.css" rel="stylesheet">
+    <link href="app/bower_components/fontawesome/css/font-awesome.css" rel="stylesheet">
     <link href="app/bower_components/angular-loading-bar/build/loading-bar.css" rel="stylesheet">
 
     <!-- bower:css -->
@@ -46,6 +46,8 @@
     <script src="app/bower_components/angular-utils-pagination/dirPagination.js"></script>
     <script src="app/bower_components/ng-tags-input/ng-tags-input.js"></script>
     <script src="app/bower_components/angular-loading-bar/build/loading-bar.js"></script>
+    <script src="app/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="app/bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -95,7 +97,11 @@
 
     <!-- Articles-->
     <script src="app/scripts/articles/ArticlesCtrl.js"></script>
-    <script src="app/scripts/articles/ArticlesFactory.js"></script>        
+    <script src="app/scripts/articles/ArticlesFactory.js"></script>  
+
+    <!-- Reddits -->
+    <script src="app/scripts/reddits/RedditsCtrl.js"></script>
+    <script src="app/scripts/reddits/RedditsFactory.js"></script>            
 
     <!-- Filters -->
     <script src="app/scripts/filters/spacesToDashes.js"></script>

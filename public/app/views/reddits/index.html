@@ -1,0 +1,17 @@
+<div class="row">
+	<div class="col-md-12">
+		<a href="#/reddits/create"><button type="button" data-toggle="modal" class="btn btn-success">Nou Reddit</button></a>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		<h2>Reddit's <small> Per estar informat</small></h2>
+
+		<ul class="list-group">
+			<li class="list-group-item" ng-repeat="reddit in reddits.reddits">
+			<a ng-href="#/reddits/{{reddit.name}}">{{reddit.name}}</a>
+			</li>
+		</ul>
+	</div>
+</div>

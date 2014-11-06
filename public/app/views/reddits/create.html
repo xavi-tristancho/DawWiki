@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-md-12">
+    <h2>Afegeix un nou Reddit:</h2>
+  </div>
+  <div class="col-md-12">
+    <form ng-submit="reddits.createRedditObject()" class="form-horizontal" role="form">
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Nom</label>
+        <div class="col-sm-10">
+          <input ng-model="reddits.newRedditObject.name" type="text" class="form-control" placeholder="Nom">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-success">Afegeix</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

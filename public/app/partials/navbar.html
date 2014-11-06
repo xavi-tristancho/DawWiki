@@ -10,13 +10,23 @@
       </button>
       <a class="navbar-brand" href="#/">DawWiki</a>
     </div>
+
     <div ng-if="isAuthorized([userRoles.admin, userRoles.member])" class="navbar-collapse collapse">
+
       <ul class="nav navbar-nav">
+
         <li ng-class="{ active: nav.isActive('subjects') }"><a href="#/subjects">Assignatures</a></li>
         <li ng-class="{ active: nav.isActive('shares') }"><a href="#/shares">Comparteix Codi</a></li>
-        <li ng-class="{ active: nav.isActive('famouses') }"><a href="#/famouses">Personalitats</a></li>
-        <li ng-class="{ active: nav.isActive('articles') }"><a href="#/articles">Articles</a></li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Aprèn +<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li ng-class="{ active: nav.isActive('famouses') }"><a href="#/famouses">Mestres</a></li>
+            <li ng-class="{ active: nav.isActive('reddits') }"><a href="#/reddits">Reddit's</a></li>
+          </ul>
+        </li>
       </ul>
+
       <ul class="nav navbar-nav navbar-right">
         <li ng-if="isAuthorized(userRoles.admin)"><a href="#/users/create">Nou Usuari</a></li>
         <li ng-show="currentUser.username"><a href="#">{{ currentUser.username }}</a></li>
