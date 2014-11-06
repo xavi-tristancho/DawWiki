@@ -1,9 +1,14 @@
 <?php namespace DawWiki\Famouses;
 
 use League\Fractal\TransformerAbstract;
+use DawWiki\Articles\ArticleTransformer;
 
 class FamousTransformer extends TransformerAbstract
 {
+    protected $availableEmbeds = [
+        'articles'
+    ];
+
     /**
      * Turn this item object into a generic array
      *
@@ -22,5 +27,12 @@ class FamousTransformer extends TransformerAbstract
             'twitter'      => $famous->twitter,
             'github'       => $famous->github
         ];
+    }
+
+    public function embedArticles(Famous $famous)
+    {
+        $articles = $famous->articles;
+
+        return $this->collection($articles, new ArticleTransformer);
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use DawWiki\Famouses\Famous;
 use DawWiki\Articles\Article;
 use DawWiki\Articles\ArticleTransformer;
 use League\Fractal\Manager;
@@ -12,19 +13,6 @@ class ArticlesController extends ApiController {
         //Limit the users who can do more than read operations
         $this->beforeFilter('auth');
     }
-    
-	/**
-	 * Display a listing of the resource.
-	 * GET /articles
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		$articles = Article::all();
-
-		return $this->respondWithCollection($articles, new ArticleTransformer());
-	}
 
 	/**
 	 * Store a newly created resource in storage.
@@ -36,12 +24,18 @@ class ArticlesController extends ApiController {
 	{
 		$inputs = Input::all();
 
-		if(!$inputs['title'] || !$inputs['link'] || !$inputs['tags'])
+		if(!$inputs['title'] || !$inputs['link'] || !$inputs['tags'] || !$inputs['famous_id'])
 		{
 			return $this->errorWrongArgs();
 		}
 
 		$inputs['tags'] = $this->formatTags($inputs['tags']);
+
+		$name = ucwords(str_replace('-', ' ', $inputs['famous_id']));
+
+		$famous = Famous::where('name', '=', $name)->get()->first();
+
+		$inputs['famous_id'] = $famous->id;
 
 		return Article::create($inputs);
 	}
@@ -102,6 +96,13 @@ class ArticlesController extends ApiController {
 		}
 
 		return implode(',', $formattedTags);
+	}
+
+	private function getFamousByName($name)
+	{
+		$name = ucwords(str_replace('-', ' ', $name));
+
+		return Famous::where('name', '=', $name)->get()->first();
 	}
 
 }
