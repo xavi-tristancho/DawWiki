@@ -69,7 +69,18 @@
                         return error;
                     });
             },
-
+            tweets : function(name)
+            {
+                return $http.get('api/famouses/' + name + '/tweets')
+                    .then(function(data)
+                    {
+                        return data;
+                    }, function(error)
+                    {
+                        console.log(error);
+                        return error;
+                    });
+            },
     	}
     }
 })();

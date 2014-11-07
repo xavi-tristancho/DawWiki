@@ -12,70 +12,82 @@
 
 <div class="row famouses">
 	<div class="col-md-8">
-		<ul class="event-list">
-			<li>
-		        <img ng-src="{{ famouses.famous.photo }}" alt="">
-		        <div class="info">
-		          <h2 class="title">{{ famouses.famous.name }}</h2>
-		          <p class="desc">{{ famouses.famous.description}}</p>
-		          <ul>
-		            <li ng-if="famouses.famous.web" style="width:50%;">
-		              <a ng-href="{{ famouses.famous.web }}" target="_blank">
-		                <span class="fa fa-globe"></span>
-		                 Pàgina Web
-		              </a>
-		            </li>
-		          </ul>
-		        </div>
-		        <div class="social">
-		          <ul>
-		            <li class="wikipedia disabled" style="width:34%;">
-		              <a ng-href="{{ famouses.famous.wikipedia }}" target="_blank">
-		                <span class="fa fa-wordpress"></span>
-		              </a>
-		            </li>
-		            <li class="twitter" style="width:34%;">
-		              <a ng-href="https://twitter.com/{{ famouses.famous.twitter }}" target="_blank">
-		                <span class="fa fa-twitter"></span>
-		              </a>
-		            </li>
-		            <li class="github" style="width:33%;">
-		              <a ng-href="http://github.com/{{ famouses.famous.github }}" target="_blank">
-		                <span class="fa fa-github"></span>
-		              </a>
-		            </li>
-		          </ul>
-		        </div>
-	      	</li>
+		<div class="row">
+
+			<!-- Perfil -->
+			<div class="col-md-12">
+				<ul class="event-list">
+					<li>
+				        <img ng-src="{{ famouses.famous.photo }}" alt="">
+				        <div class="info">
+				          <h2 class="title">{{ famouses.famous.name }}</h2>
+				          <p class="desc">{{ famouses.famous.description}}</p>
+				          <ul>
+				            <li ng-if="famouses.famous.web" style="width:50%;">
+				              <a ng-href="{{ famouses.famous.web }}" target="_blank">
+				                <span class="fa fa-globe"></span>
+				                 Pàgina Web
+				              </a>
+				            </li>
+				          </ul>
+				        </div>
+				        <div class="social">
+				          <ul>
+				            <li class="wikipedia disabled" style="width:34%;">
+				              <a ng-href="{{ famouses.famous.wikipedia }}" target="_blank">
+				                <span class="fa fa-wordpress"></span>
+				              </a>
+				            </li>
+				            <li class="twitter" style="width:34%;">
+				              <a ng-href="https://twitter.com/{{ famouses.famous.twitter }}" target="_blank">
+				                <span class="fa fa-twitter"></span>
+				              </a>
+				            </li>
+				            <li class="github" style="width:33%;">
+				              <a ng-href="http://github.com/{{ famouses.famous.github }}" target="_blank">
+				                <span class="fa fa-github"></span>
+				              </a>
+				            </li>
+				          </ul>
+				        </div>
+			      	</li>
+				</ul>
+			</div>
+
+			<!-- Articles -->
+			<div class="col-md-12">
+
+				<h3>Els seus articles:</h3>
+
+				<div class="row" style="margin-bottom:10px">
+				  <div class="col-md-12">
+				    <input ng-model="search" type="text" class="form-control" placeholder="Cerca">
+				  </div>
+				</div>
+
+				<ul class="list-group">
+				  <li class="list-group-item" dir-paginate="article in famouses.famous.articles.data | filter:search | itemsPerPage: 10">
+				    <a ng-href="{{ article.link }}" target="_blank">{{ article.title }}</a>
+				    <span class="pull-right">
+				      <a ng-href="#/articles/{{ article.id }}/edit">
+				        <button type="button" class="btn btn-info btn-xs">Editar</button>
+				      </a>
+				      <button ng-click="famouses.destroyArticle(article.id)" type="button" class="btn btn-danger btn-xs">Eliminar</button>
+				      </span>
+				    </span>
+				  </li>
+				</ul>
+				<dir-pagination-controls template-url="app/bower_components/angular-utils-pagination/dirPagination.tpl.html"></dir-pagination-controls>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-4">
+		<ul class="list-group">
+			<li class="list-group-item" ng-repeat="tweet in famouses.tweets">
+				<p ng-bind-html="tweet.text | linky:'_blank'"></p>
+			</li>
 		</ul>
 	</div>
-</div>
-
-
-
-<div class="row">
-  <div class="col-md-8">
-
-	<h3>Els seus articles:</h3>
-
-	<div class="row" style="margin-bottom:10px">
-	  <div class="col-md-12">
-	    <input ng-model="search" type="text" class="form-control" placeholder="Cerca">
-	  </div>
-	</div>
-
-    <ul class="list-group">
-      <li class="list-group-item" dir-paginate="article in famouses.famous.articles.data | filter:search | itemsPerPage: 10">
-        <a ng-href="{{ article.link }}" target="_blank">{{ article.title }}</a>
-        <span class="pull-right">
-          <a ng-href="#/articles/{{ article.id }}/edit">
-            <button type="button" class="btn btn-info btn-xs">Editar</button>
-          </a>
-          <button ng-click="famouses.destroyArticle(article.id)" type="button" class="btn btn-danger btn-xs">Eliminar</button>
-          </span>
-        </span>
-      </li>
-    </ul>
-    <dir-pagination-controls template-url="app/bower_components/angular-utils-pagination/dirPagination.tpl.html"></dir-pagination-controls>
-  </div>
 </div>

@@ -82,6 +82,22 @@
         vm.famous = famous;
       }
 
+      vm.getTweets = function()
+      {
+        Famouses.tweets($routeParams.name)
+        .then(function(data)
+        {
+          vm.setTweets(data.data);
+        });
+      }
+
+      vm.getTweets();
+
+      vm.setTweets = function(tweets)
+      {
+        vm.tweets = tweets;
+      }
+
       vm.destroyArticle = function(id)
       {
         Articles.destroy(id)
