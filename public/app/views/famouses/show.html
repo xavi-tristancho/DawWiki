@@ -11,10 +11,9 @@
 </div>
 
 <div class="row famouses">
+
 	<div class="col-md-8">
 		<div class="row">
-
-			<!-- Perfil -->
 			<div class="col-md-12">
 				<ul class="event-list">
 					<li>
@@ -53,10 +52,10 @@
 			      	</li>
 				</ul>
 			</div>
+		</div>
 
-			<!-- Articles -->
+		<div class="row">
 			<div class="col-md-12">
-
 				<h3>Els seus articles:</h3>
 
 				<div class="row" style="margin-bottom:10px">
@@ -78,16 +77,21 @@
 				  </li>
 				</ul>
 				<dir-pagination-controls template-url="app/bower_components/angular-utils-pagination/dirPagination.tpl.html"></dir-pagination-controls>
-				</div>
 			</div>
 		</div>
 	</div>
 
 	<div class="col-md-4">
-		<ul class="list-group">
-			<li class="list-group-item" ng-repeat="tweet in famouses.tweets">
-				<p ng-bind-html="tweet.text | linky:'_blank'"></p>
-			</li>
-		</ul>
+		<div class="row">
+			<div class="col-md-12">
+				<ul class="list-group">
+					<li class="list-group-item" ng-repeat="tweet in famouses.tweets">
+						<p ng-bind-html="tweet.text | linky:'_blank'"></p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
 	</div>
+
 </div>
