@@ -19,6 +19,7 @@ Route::group(array('prefix' => 'api'), function() {
 	Route::resource('activities', 'ActivitiesController');
 	Route::resource('answers', 'AnswersController');
 	Route::resource('famouses', 'FamousesController');
+	Route::get('famouses/{famouses}/tweets', 'FamousesController@tweets');
 	Route::resource('articles', 'ArticlesController');
 	Route::resource('reddits', 'RedditsController');
 });

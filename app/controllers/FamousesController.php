@@ -96,4 +96,14 @@ class FamousesController extends ApiController {
 		return Famous::destroy($id);
 	}
 
+	public function tweets($name)
+	{
+		$name = ucwords(str_replace('-', ' ', $name));
+
+		$famous = Famous::where('name', '=', $name)->get()->first();
+
+		return Twitter::searchTweetsOfAFamous($famous);
+
+	}
+
 }
