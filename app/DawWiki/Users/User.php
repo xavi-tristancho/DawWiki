@@ -34,4 +34,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	{
 		return ($this->role == $role);
 	}
+
+	public function favoritedReddits()
+	{
+		return $this->hasMany('DawWiki\Reddits\FavoritedReddit');
+	}
 }

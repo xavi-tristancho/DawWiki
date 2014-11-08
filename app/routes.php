@@ -13,6 +13,7 @@ Route::group(array('prefix' => 'api'), function() {
 	Route::get('logout', 'SessionsController@destroy');
 	Route::resource('sessions', 'SessionsController');
 	Route::resource('users', 'UsersController');
+	Route::resource('users.favorited_reddits', 'FavoritedRedditsController');
 	Route::resource('subjects', 'SubjectsController');
 	Route::resource('shares', 'SharesController');
 	Route::resource('topics', 'TopicsController');

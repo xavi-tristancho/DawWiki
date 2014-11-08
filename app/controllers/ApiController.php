@@ -169,4 +169,13 @@ class ApiController extends Controller
 	{
 		return $answer->user->role == 'member';
 	}
+
+	protected function getUserByName($user)
+	{
+		$user = ucwords(str_replace('-', ' ', $user));
+
+		$famous = DawWiki\Users\User::where('username', '=', $user)->get()->first();
+
+		return $famous;
+	}
 }
