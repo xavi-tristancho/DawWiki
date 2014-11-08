@@ -101,11 +101,13 @@
 
     <!-- Reddits -->
     <script src="app/scripts/reddits/RedditsCtrl.js"></script>
-    <script src="app/scripts/reddits/RedditsFactory.js"></script>            
+    <script src="app/scripts/reddits/RedditsFactory.js"></script>
+    <script src="app/scripts/reddits/FavoritedRedditsFactory.js"></script>
 
     <!-- Filters -->
     <script src="app/scripts/filters/spacesToDashes.js"></script>
     <script src="app/scripts/filters/limitString.js"></script>
+    <script src="app/scripts/filters/tweetLink.js"></script>
 
     <!-- inject:partials -->
     <!-- angular templates will be automaticaly converted in js and inserted here -->

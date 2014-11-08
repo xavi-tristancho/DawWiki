@@ -20,6 +20,18 @@
                         console.log(error);
                         return error;
                     });
+            },
+            favoritedReddits : function(name)
+            {
+                return $http.get('api/users/' + name + '/favorited_reddits?embed=reddit')
+                    .then(function(data)
+                    {
+                        return data.data;
+                    }, function(error)
+                    {
+                        console.log(error);
+                        return error;
+                    });
             }
     	}
     }

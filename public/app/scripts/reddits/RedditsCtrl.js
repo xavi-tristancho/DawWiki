@@ -58,7 +58,7 @@
       }
     }
 
-    function ShowRedditsCtrl($routeParams, Reddits)
+    function ShowRedditsCtrl($rootScope, $filter, $routeParams, Reddits)
     {
       var vm = this;
 
@@ -74,6 +74,24 @@
           vm.feed = data;
         });
 
+      vm.favorite = function(reddit_id,title,permalink,posted_at)
+      {
+        var username = $filter('slugify')($rootScope.currentUser.username);
+
+        var newFavoritedRedditObject = {
+
+          reddit_id : reddit_id,
+          title : title,
+          permalink : permalink,
+          posted_at : posted_at
+        }
+
+        Reddits.favorite(username, newFavoritedRedditObject)
+          .then(function(data)
+          {
+            
+          });
+      }
     }
 
     function EditRedditsCtrl($routeParams, $location, Reddits)

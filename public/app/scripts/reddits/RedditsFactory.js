@@ -81,6 +81,18 @@
                         return error;
                     });
             },
+            favorite : function(username, newFavoritedRedditObject)
+            {
+                return $http.post('api/users/' + username + '/favorited_reddits', newFavoritedRedditObject)
+                    .then(function(data)
+                    {
+                        return data.data;
+                    }, function(error)
+                    {
+                        console.log(error);
+                        return error;
+                    });
+            }
 
     	}
     }

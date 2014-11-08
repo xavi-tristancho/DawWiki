@@ -1,0 +1,23 @@
+<div class="row">
+	<div class="col-md-5">
+		<h4>Reddit's Favortis</h4>
+		<ul class="list-group">
+			<li class="list-group-item" ng-repeat="reddit in users.favoritedReddits">
+
+				<span class="pull-left badge">
+					{{ reddit.reddit.data.name }}
+				</span>
+
+				<span ng-if="iAmAdminWhoWroteThis(reddit.user_id)" class="pull-right">
+				  <button ng-click="users.destroyFavoritedReddit(reddit.id)" type="button" class="btn btn-danger btn-xs">Eliminar</button>
+				</span>
+
+				<br>
+				{{reddit.posted_at * 1000 | date:"dd/MM/yyyy"}} - 
+				<a ng-href="http://www.reddit.com{{reddit.permalink}}" target="_blank">
+					{{ reddit.title }}
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>

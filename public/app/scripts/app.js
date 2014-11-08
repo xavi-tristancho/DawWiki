@@ -29,6 +29,12 @@ angular.module('app', [
         controllerAs: 'users',
         authorizedRoles : [USER_ROLES.admin]
       })
+      .when('/users/:name', {
+        templateUrl: 'app/views/users/show.html',
+        controller: 'ShowUsersCtrl',
+        controllerAs: 'users',
+        authorizedRoles : [USER_ROLES.member, USER_ROLES.admin]
+      })
       .when('/subjects', {
         templateUrl: 'app/views/subjects/index.html',
         controller: 'AllSubjectsCtrl',
