@@ -13,16 +13,16 @@
 				$rootScope.currentUser = user;
 			};
 
-			$scope.iAmCreator = function(answer)
+			$scope.iAmCreator = function(user_id)
 			{
-				return (answer.user.data.id == Session.userId);
+				return (user_id == Session.userId);
 			}
 
-			$scope.iAmAdminWhoWroteThis = function(answer)
+			$scope.iAmAdminWhoWroteThis = function(user_id)
 			{
-				if(this.iAmCreator(answer))
+				if(this.iAmCreator(user_id))
 				{
-					return (answer.user.data.id == Session.userId)
+					return (user_id == Session.userId)
 				}
 
 				return false;
@@ -30,7 +30,7 @@
 
 			$scope.writedByAMember = function (answer)
 			{
-				return (answer.user.data.role == USER_ROLES.member);
+				return (user.data.role == USER_ROLES.member);
 			}
 		}
 })();

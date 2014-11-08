@@ -31,7 +31,7 @@
 		<p><b>@{{ answer.user.data.username }}:</b></p>
 		<pre ng-bind-html="answer.statement | linky:'_blank'"></pre>
 	</div>
-	<span ng-if="iAmAdminWhoWroteThis(answer) || iAmCreator(answer) || writedByAMember(answer)" class="pull-right">
+	<span ng-if="iAmAdminWhoWroteThis(answer.user) || iAmCreator(answer.user) || writedByAMember(answer.user)" class="pull-right">
 		<button type="button" ng-click="activities.deleteAnswerObject(answer.id)" class="btn btn-danger btn-xs">Eliminar</button>
 	</span>
 </div>
