@@ -15,6 +15,13 @@ class UsersController extends ApiController
         $this->beforeFilter('role:admin', ['on' => ['post', 'put', 'patch', 'delete']]);
     }
 
+    public function index()
+    {
+        $users = User::all();
+
+        return $this->respondWithCollection($users, new UserTransformer);
+    }
+
     public function me()
     {
         $me = Auth::user();
