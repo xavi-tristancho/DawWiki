@@ -13,24 +13,24 @@
 				$rootScope.currentUser = user;
 			};
 
-			$scope.iAmCreator = function(user_id)
+			$scope.iAmCreator = function(userId)
 			{
-				return (user_id == Session.userId);
+				return (userId == Session.userId);
 			}
 
-			$scope.iAmAdminWhoWroteThis = function(user_id)
+			$scope.iAmAdminWhoWroteThis = function(userId)
 			{
-				if(this.iAmCreator(user_id))
+				if(this.iAmCreator(userId))
 				{
-					return (user_id == Session.userId)
+					return (userId == Session.userId)
 				}
 
 				return false;
 			}
 
-			$scope.writedByAMember = function (answer)
+			$scope.writedByAMember = function (userRole)
 			{
-				return (user.data.role == USER_ROLES.member);
+				return (userRole == USER_ROLES.member);
 			}
 		}
 })();
