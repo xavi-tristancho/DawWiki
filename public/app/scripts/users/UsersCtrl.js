@@ -3,8 +3,36 @@
   'use strict';
 
   angular.module('app')
+    .controller('AllUsersCtrl', AllUsersCtrl)
     .controller('CreateUsersCtrl', CreateUsersCtrl)
     .controller('ShowUsersCtrl', ShowUsersCtrl);
+
+    function AllUsersCtrl(Users)
+    {
+      var vm = this;
+
+      vm.getUsers = function()
+      {
+        Users.all()
+        .then(function(data)
+        {
+          vm.setUsers(data.data);
+        });
+      };
+
+      vm.getUsers();
+
+      vm.setUsers = function(users)
+      {
+        vm.users = users;
+
+        vm.chunks = [];
+          
+          for ( var i = 0; i < vm.users.length; i += 2) {
+              vm.chunks.push( vm.users.slice(i, i + 2) );
+          }
+      };
+    }
 
     function CreateUsersCtrl($routeParams, Users, $location) {
 

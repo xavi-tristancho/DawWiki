@@ -9,6 +9,18 @@
     {
     	return {
 
+            all : function()
+            {
+                return $http.get('api/users')
+                    .then(function(data)
+                    {
+                        return data.data;
+                    }, function(error)
+                    {
+                        console.log(error);
+                        return error;
+                    });
+            },
             create : function(newUsersObject)
             {
                 return $http.post('api/users', newUsersObject)
@@ -33,6 +45,6 @@
                         return error;
                     });
             }
-    	}
+    	};
     }
 })();

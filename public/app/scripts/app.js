@@ -8,7 +8,8 @@ angular.module('app', [
   'angular.filter',
   'angularUtils.directives.dirPagination',
   'ngTagsInput',
-  'angular-loading-bar'
+  'angular-loading-bar',
+  'angular-md5'
   ])
   .config(function ($routeProvider, USER_ROLES) {
     $routeProvider
@@ -21,6 +22,12 @@ angular.module('app', [
       .when('/login', {
         templateUrl: 'app/partials/login.html',
         controller: 'LoginCtrl',
+        authorizedRoles : [USER_ROLES.member, USER_ROLES.admin]
+      })
+      .when('/users', {
+        templateUrl: 'app/views/users/index.html',
+        controller: 'AllUsersCtrl',
+        controllerAs: 'users',
         authorizedRoles : [USER_ROLES.member, USER_ROLES.admin]
       })
       .when('/users/create', {

@@ -48,6 +48,7 @@
     <script src="app/bower_components/angular-loading-bar/build/loading-bar.js"></script>
     <script src="app/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
     <script src="app/bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="app/bower_components/angular-md5/angular-md5.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -107,7 +108,6 @@
     <!-- Filters -->
     <script src="app/scripts/filters/spacesToDashes.js"></script>
     <script src="app/scripts/filters/limitString.js"></script>
-    <script src="app/scripts/filters/tweetLink.js"></script>
 
     <!-- inject:partials -->
     <!-- angular templates will be automaticaly converted in js and inserted here -->
