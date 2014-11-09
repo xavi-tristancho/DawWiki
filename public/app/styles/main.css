@@ -3,6 +3,12 @@ body {
   margin-top: 50px;
 }
 
+a:hover,
+a:focus {
+  color: #2a6496;
+  text-decoration: none;
+}
+
 .starter-template {
   padding: 40px 15px;
   text-align: center;

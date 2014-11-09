@@ -17,6 +17,13 @@
 		<ul class="list-group">
 			<li class="list-group-item" ng-repeat="post in reddits.feed">
 				<span class="pull-right">
+
+					
+						<a ng-href="{{'http://www.reddit.com' + post.data.permalink}}" target="_blank">
+							<button type="button" class="btn btn-default">Comentaris</button>
+						</a>
+					
+
 					<div class="btn-group" dropdown is-open="status.isopen">
 					      <button type="button" class="btn btn-primary btn dropdown-toggle" ng-disabled="disabled">
 					        Accions <span class="caret"></span>
@@ -25,22 +32,23 @@
 					        <li><a ng-click="reddits.favorite(reddits.reddit.id, post.data.title, post.data.permalink, post.data.created_utc)" href=""><i class="fa fa-star fa-fw"></i> Favorit</a></li>
 					        <li><a href=""><i class="fa fa-bullhorn fa-fw"></i> Recomanar</a></li>
 					      </ul>
-					    </div>
+					</div>
 				</span>
 
-				<p>
-					<img ng-if="post.data.thumbnail != 'self' && post.data.thumbnail != 'default' && post.data.thumbnail != ''" width="70px" height="70px" ng-src="{{post.data.thumbnail}}" alt="">
-
-					<img ng-if="post.data.thumbnail == 'self' || post.data.thumbnail == 'default' || post.data.thumbnail == ''" width="70px" height="70px" src="http://adiumxtras.com/images/thumbs/reddit_alien_1_3582_2149_thumb.png" alt="">
-
-					<span class="linkflair-{{post.data.link_flair_css_class}}">
-						{{post.data.link_flair_text }}
-					</span> 
-
-					<a ng-href="http://www.reddit.com/r/{{ reddits.reddit.name}}/comments/{{ post.data.id }}" target="_blank">
-						{{post.data.title}}
-					</a>
-				</p>
+				<div class="row">
+					<div class="col-md-1">
+						<img ng-if="post.data.thumbnail != 'self' && post.data.thumbnail != 'default' && post.data.thumbnail != ''" width="70px" height="70px" ng-src="{{post.data.thumbnail}}" alt="">
+						<img ng-if="post.data.thumbnail == 'self' || post.data.thumbnail == 'default' || post.data.thumbnail == ''" width="70px" height="70px" src="http://adiumxtras.com/images/thumbs/reddit_alien_1_3582_2149_thumb.png" alt="">
+					</div>
+					<div class="col-md-8">
+						<span class="linkflair-{{post.data.link_flair_css_class}}">
+							{{post.data.link_flair_text }}
+						</span> 
+						<a ng-href="{{post.data.url}}" target="_blank">
+							{{post.data.title}}
+						</a>
+					</div>
+				</div>
 			</li>
 		</ul>
 
