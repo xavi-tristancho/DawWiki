@@ -18,11 +18,9 @@
 			<li class="list-group-item" ng-repeat="post in reddits.feed">
 				<span class="pull-right">
 
-					
-						<a ng-href="{{'http://www.reddit.com' + post.data.permalink}}" target="_blank">
-							<button type="button" class="btn btn-default">Comentaris</button>
-						</a>
-					
+					<a ng-href="{{'http://www.reddit.com' + post.data.permalink}}" target="_blank">
+						<button type="button" class="btn btn-default">Comentaris</button>
+					</a>
 
 					<div class="btn-group" dropdown is-open="status.isopen">
 					      <button type="button" class="btn btn-primary btn dropdown-toggle" ng-disabled="disabled">

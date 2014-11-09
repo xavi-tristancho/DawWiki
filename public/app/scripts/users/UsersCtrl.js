@@ -22,11 +22,11 @@
         vm.disableCreateButton = true;
 
         Users.create(vm.newUserObject)
-          .then(function(data)
+          .then(function()
           {
             $location.url('/');
           });
-      }
+      };
 
     }
 
@@ -41,25 +41,25 @@
         {
           vm.setFavoritedReddits(data.data);
         });
-      }
+      };
 
       vm.getFavoritedReddits();
 
       vm.setFavoritedReddits = function(favoritedReddits)
       {
         vm.favoritedReddits = favoritedReddits;
-      }
+      };
 
       vm.destroyFavoritedReddit = function(id)
       {
         var username = $filter('slugify')($rootScope.currentUser.username);
 
         FavoritedReddits.destroy(username, id)
-          .then(function(data)
+          .then(function()
           {
             vm.getFavoritedReddits();
           });
-      }
+      };
 
     }
 

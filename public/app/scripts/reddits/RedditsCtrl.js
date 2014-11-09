@@ -21,23 +21,23 @@
         {
           vm.setReddits(data.data);
         });
-      }
+      };
 
       vm.getReddits();
 
       vm.setReddits = function(reddits)
       {
         vm.reddits = reddits;
-      }
+      };
 
       vm.destroy = function(id)
       {
         Reddits.destroy(id)
-          .then(function(data)
+          .then(function()
           {
             vm.getReddits();
           });
-      }
+      };
     }
 
     function NewRedditsCtrl($location, Reddits)
@@ -51,11 +51,11 @@
       vm.createRedditObject = function()
       {
         Reddits.create(vm.newRedditObject)
-          .then(function(data)
+          .then(function()
           {
             $location.url('reddits');
           });
-      }
+      };
     }
 
     function ShowRedditsCtrl($rootScope, $filter, $routeParams, Reddits)
@@ -74,24 +74,20 @@
           vm.feed = data;
         });
 
-      vm.favorite = function(reddit_id,title,permalink,posted_at)
+      vm.favorite = function(redditId,title,permalink,postedAt)
       {
         var username = $filter('slugify')($rootScope.currentUser.username);
 
         var newFavoritedRedditObject = {
 
-          reddit_id : reddit_id,
+          redditId : redditId,
           title : title,
           permalink : permalink,
-          posted_at : posted_at
-        }
+          postedAt : postedAt
+        };
 
-        Reddits.favorite(username, newFavoritedRedditObject)
-          .then(function(data)
-          {
-            
-          });
-      }
+        Reddits.favorite(username, newFavoritedRedditObject);
+      };
     }
 
     function EditRedditsCtrl($routeParams, $location, Reddits)
@@ -107,7 +103,7 @@
       vm.updateRedditObject = function()
       {
         Reddits.update(vm.editRedditObject)
-          .then(function(data)
+          .then(function()
           {
             $location.url('Reddits');
           });        
