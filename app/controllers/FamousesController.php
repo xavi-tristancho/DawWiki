@@ -102,7 +102,7 @@ class FamousesController extends ApiController {
 
 		$famous = Famous::where('name', '=', $name)->get()->first();
 
-		return Twitter::searchTweetsOfAFamous($famous);
+		return Twitter::getTweetsOfAFamous($famous);
 
 	}
 

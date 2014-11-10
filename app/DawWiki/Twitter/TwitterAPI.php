@@ -12,7 +12,7 @@ class TwitterAPI{
 		$this->client = $client;
 	}
 
-	public function searchTweetsOfAFamous(Famous $famous)
+	public function getTweetsOfAFamous(Famous $famous)
 	{
 		$response = $this->client->get('statuses/user_timeline.json?screen_name='. $famous->twitter .'&count=10')->send();
 
