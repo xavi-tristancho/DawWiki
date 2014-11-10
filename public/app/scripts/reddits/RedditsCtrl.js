@@ -86,13 +86,20 @@
           posted_at : postedAt
         };
 
-        console.log(newFavoritedRedditObject);
+        Reddits.favorite(username, newFavoritedRedditObject);
+      };
 
-        Reddits.favorite(username, newFavoritedRedditObject)
-          .then(function()
-          {
+      vm.recommend = function(redditId , title , permalink , postedAt)
+      {
+        var newRecommendedRedditObject = {
 
-          });
+          reddit_id : redditId,
+          title : title,
+          permalink : permalink,
+          posted_at : postedAt
+        };
+
+        Reddits.recommend(newRecommendedRedditObject);
       };
     }
 

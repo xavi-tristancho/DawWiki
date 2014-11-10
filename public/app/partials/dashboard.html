@@ -26,3 +26,25 @@
 		</ul>
 	</div>
 </div>
+
+<div class="row">
+	<div class="col-md-6">
+		<h4>Reddit's Recomanats</h4>
+		<ul class="list-group">
+			<li class="list-group-item" ng-repeat="reddit in dashboard.recommendedReddits">
+
+				<span class="pull-left badge">
+					{{ reddit.reddit.data.name }}
+				</span>
+
+				<br>
+				{{reddit.posted_at * 1000 | date:"dd/MM/yyyy"}} - 
+				<a ng-href="http://www.reddit.com{{reddit.permalink}}" target="_blank">
+					{{ reddit.title }}
+				</a>
+				<br>
+				<small> - Recomanat per {{reddit.user.data.username}}</small>
+			</li>
+		</ul>
+	</div>
+</div>

@@ -92,6 +92,30 @@
                         console.log(error);
                         return error;
                     });
+            },
+            recommend : function(newRecommendedRedditObject)
+            {
+                return $http.post('api/recommended_reddits', newRecommendedRedditObject)
+                    .then(function(data)
+                    {
+                        return data.data;
+                    }, function(error)
+                    {
+                        console.log(error);
+                        return error;
+                    });
+            },
+            recommended : function()
+            {
+                return $http.get('api/recommended_reddits?embed=reddit,user')
+                    .then(function(data)
+                    {
+                        return data.data;
+                    }, function(error)
+                    {
+                        console.log(error);
+                        return error;
+                    });
             }
 
     	}
