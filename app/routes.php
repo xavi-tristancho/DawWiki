@@ -23,4 +23,5 @@ Route::group(array('prefix' => 'api'), function() {
 	Route::get('famouses/{famouses}/tweets', 'FamousesController@tweets');
 	Route::resource('articles', 'ArticlesController');
 	Route::resource('reddits', 'RedditsController');
+	Route::resource('recommended_reddits', 'RecommendedRedditsController');
 });
