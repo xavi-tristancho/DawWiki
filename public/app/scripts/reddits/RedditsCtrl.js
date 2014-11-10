@@ -80,13 +80,19 @@
 
         var newFavoritedRedditObject = {
 
-          redditId : redditId,
+          reddit_id : redditId,
           title : title,
           permalink : permalink,
-          postedAt : postedAt
+          posted_at : postedAt
         };
 
-        Reddits.favorite(username, newFavoritedRedditObject);
+        console.log(newFavoritedRedditObject);
+
+        Reddits.favorite(username, newFavoritedRedditObject)
+          .then(function()
+          {
+
+          });
       };
     }
 
