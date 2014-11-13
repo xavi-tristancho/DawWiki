@@ -2,6 +2,7 @@
 
 use DawWiki\Answers\Answer;
 use DawWiki\Answers\AnswerTransformer;
+use DawWiki\Answers\Observers\AnswerObserver;
 use League\Fractal\Manager;
 
 class AnswersController extends ApiController {
@@ -39,6 +40,9 @@ class AnswersController extends ApiController {
 
 		if($inputs['statement'] != '')
 		{
+
+			Answer::observe(new AnswerObserver);
+
 			return Answer::create([
 				'activity_id' => $inputs['activity_id'],
 				'user_id'     => Auth::user()->id,
