@@ -5,7 +5,7 @@ use DawWiki\Reddits\RecommendedReddit;
 
 class RecommendedRedditObserver{
 
-  public static function created($model)
+  public function created($model)
   {
     $body = '<a href=\'http://www.reddit.com'. $model->permalink .'\'>'. $model->title .'</a>';
 
