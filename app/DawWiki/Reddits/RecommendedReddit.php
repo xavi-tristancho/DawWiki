@@ -1,7 +1,7 @@
 <?php namespace DawWiki\Reddits;
 
 class RecommendedReddit extends \Eloquent {
-	
+
 	protected $fillable = ['user_id', 'reddit_id', 'title', 'permalink', 'posted_at'];
 
 	public function reddit()

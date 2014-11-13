@@ -3,37 +3,36 @@
   'use strict';
 
   angular.module('app')
-    .controller('DashboardCtrl', function (Activities, Answers, Reddits) {
+    .controller('DashboardCtrl', function (Timeline) {
 
     var vm = this;
 
-    Activities.latest()
-      .then(function(data)
-      {
-        vm.activities = data.data;
-      });
-
-    Answers.latest()
-      .then(function(data)
-      {
-        vm.answers = data.data;
-      });
-
-    vm.getRecommendedReddits = function()
+    vm.getTimeline = function()
     {
-      Reddits.recommended()
+      Timeline.all()
       .then(function(data)
       {
-        vm.setRecommendedReddits(data.data);
+        vm.setTimeline(data.data);
       });
     };
 
-    vm.getRecommendedReddits();
+    vm.getTimeline();
 
-    vm.setRecommendedReddits = function(recommendedReddits)
+    vm.setTimeline = function(timeline)
     {
-      vm.recommendedReddits = recommendedReddits;
+      vm.timeline = timeline;
     };
+
+    vm.DateForHumans = function(date)
+    {
+      return new Date(date).addHours(1).getTime();
+    }
+
+    Date.prototype.addHours= function(h)
+    {
+      this.setHours(this.getHours()+h);
+      return this;
+    }
 
   });
 })();
