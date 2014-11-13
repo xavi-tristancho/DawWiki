@@ -9,7 +9,8 @@ angular.module('app', [
   'angularUtils.directives.dirPagination',
   'ngTagsInput',
   'angular-loading-bar',
-  'angular-md5'
+  'angular-md5',
+  'bd.timedistance'
   ])
   .config(function ($routeProvider, USER_ROLES) {
     $routeProvider
@@ -168,18 +169,18 @@ angular.module('app', [
       }
     ]);
   })
-  .run(function ($rootScope, $location, AUTH_EVENTS, AuthService) {  
+  .run(function ($rootScope, $location, AUTH_EVENTS, AuthService) {
     $rootScope.$on('$routeChangeStart', function (event, next) {
-      
+
       AuthService.isLoggedIn()
         .then(function(data)
         {
           var authorizedRoles = next.authorizedRoles;
-      
-          if (!AuthService.isAuthorized(authorizedRoles)) 
+
+          if (!AuthService.isAuthorized(authorizedRoles))
           {
             event.preventDefault();
-            
+
             if (AuthService.isAuthenticated())
             {
               // user is not allowed

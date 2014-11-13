@@ -1,50 +1,27 @@
-<div class="row">
-	<div class="col-md-6">
-		<h4>Darreres Activitats Creades:</h4>
-		<ul class="list-group" >
-			<li class="list-group-item" ng-repeat="activity in dashboard.activities">
-				{{ activity.topic.data.subject.data.name }}
-				<span class="pull-right">{{ activity.user.data.username }}</span>
-				<br>
-				{{ activity.topic.data.name }}
-				<br>
-				<a href="/#/{{ 'subjects/' + activity.topic.data.subject.data.name + '/topics/' + activity.topic.data.name + '/activities/' + activity.id | spacesToDashes }}"><b>{{ activity.title }}</b></a>
-			</li>
-		</ul>
-	</div>
-	<div class="col-md-6">
-		<h4>Darreres Respostes:</h4>
-		<ul class="list-group" >
-			<li class="list-group-item" ng-repeat="answer in dashboard.answers">
-				{{ answer.activity.data.topic.data.subject.data.name }}
-				<span class="pull-right">{{ answer.user.data.username }}</span>
-				<br>
-				{{ answer.activity.data.topic.data.name }}
-				<br>
-				<a href="/#/{{ 'subjects/' + answer.activity.data.topic.data.subject.data.name + '/topics/' + answer.activity.data.topic.data.name + '/activities/' + answer.activity_id | spacesToDashes }}"><b>{{ answer.statement | limitString }}</b></a>
-			</li>
-		</ul>
-	</div>
-</div>
-
-<div class="row">
-	<div class="col-md-6">
-		<h4>Reddit's Recomanats</h4>
-		<ul class="list-group">
-			<li class="list-group-item" ng-repeat="reddit in dashboard.recommendedReddits">
-
-				<span class="pull-left badge">
-					{{ reddit.reddit.data.name }}
-				</span>
-
-				<br>
-				{{reddit.posted_at * 1000 | date:"dd/MM/yyyy"}} - 
-				<a ng-href="http://www.reddit.com{{reddit.permalink}}" target="_blank">
-					{{ reddit.title }}
-				</a>
-				<br>
-				<small> - Recomanat per {{reddit.user.data.username}}</small>
-			</li>
-		</ul>
-	</div>
+<div class="container">
+    <div class="page-header" style="margin-top: 10px">
+        <h2 id="timeline">Activitat Recent:</h2>
+    </div>
+    <ul class="timeline">
+      <li ng-class-even="'timeline-inverted'" ng-repeat="line in dashboard.timeline">
+        <div class="timeline-badge {{ line.action }}"><i class="fa fa-{{ line.action }}"></i></div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <h4 class="timeline-title">
+              <a style="color:black; text-decoration:underline" href="#/users/{{line.user.data.username | slugify }}">{{ line.user.data.username }}</a>
+              <span ng-if="line.action == 'recommend'">
+                Recomana:
+              </span>
+              <span ng-if="line.action == 'reply'">
+                Ha contestat:
+              </span>
+            </h4>
+          </div>
+          <div class="timeline-body">
+            <p ng-bind-html="line.body"></p>
+            <p><small class="text-muted"><i class="fa fa-clock-o"></i> Fa {{ dashboard.DateForHumans(line.created_at.date) | timeDistance }}</small></p>
+          </div>
+        </div>
+      </li>
+    </ul>
 </div>

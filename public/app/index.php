@@ -49,6 +49,7 @@
     <script src="app/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
     <script src="app/bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
     <script src="app/bower_components/angular-md5/angular-md5.js"></script>
+    <script src="app/bower_components/angular-timedistance/src/bd.timedistance.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -87,7 +88,7 @@
 
     <!-- Famouses -->
     <script src="app/scripts/famouses/FamousesCtrl.js"></script>
-    <script src="app/scripts/famouses/FamousesFactory.js"></script>    
+    <script src="app/scripts/famouses/FamousesFactory.js"></script>
 
     <!-- Users -->
     <script src="app/scripts/users/UsersCtrl.js"></script>
@@ -98,12 +99,15 @@
 
     <!-- Articles-->
     <script src="app/scripts/articles/ArticlesCtrl.js"></script>
-    <script src="app/scripts/articles/ArticlesFactory.js"></script>  
+    <script src="app/scripts/articles/ArticlesFactory.js"></script>
 
     <!-- Reddits -->
     <script src="app/scripts/reddits/RedditsCtrl.js"></script>
     <script src="app/scripts/reddits/RedditsFactory.js"></script>
     <script src="app/scripts/reddits/FavoritedRedditsFactory.js"></script>
+
+    <!--Timeline-->
+    <script src="app/scripts/timeline/TimelineFactory.js"></script>
 
     <!-- Filters -->
     <script src="app/scripts/filters/spacesToDashes.js"></script>
