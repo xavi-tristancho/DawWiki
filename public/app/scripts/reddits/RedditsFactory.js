@@ -5,7 +5,7 @@
 	angular.module('app')
     .factory('Reddits', Reddits);
 
-    function Reddits($http)
+    function Reddits($http, Notifications)
     {
     	return {
 
@@ -98,18 +98,7 @@
                 return $http.post('api/recommended_reddits', newRecommendedRedditObject)
                     .then(function(data)
                     {
-                        return data.data;
-                    }, function(error)
-                    {
-                        console.log(error);
-                        return error;
-                    });
-            },
-            recommended : function()
-            {
-                return $http.get('api/recommended_reddits?embed=reddit,user')
-                    .then(function(data)
-                    {
+												Notifications.success('S\'ha recomanat amb éxit')
                         return data.data;
                     }, function(error)
                     {
@@ -117,7 +106,6 @@
                         return error;
                     });
             }
-
     	}
     }
 })();

@@ -12,6 +12,7 @@
     <link href="app/bower_components/ng-tags-input/ng-tags-input.css" rel="stylesheet">
     <link href="app/bower_components/fontawesome/css/font-awesome.css" rel="stylesheet">
     <link href="app/bower_components/angular-loading-bar/build/loading-bar.css" rel="stylesheet">
+    <link href="app/bower_components/toastr/toastr.css" rel="stylesheet">
 
     <!-- bower:css -->
     <!-- endbower -->
@@ -50,6 +51,8 @@
     <script src="app/bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
     <script src="app/bower_components/angular-md5/angular-md5.js"></script>
     <script src="app/bower_components/angular-timedistance/src/bd.timedistance.js"></script>
+    <script src="app/bower_components/angular-timedistance/src/bd.timedistance.js"></script>
+    <script src="app/bower_components/toastr/toastr.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -108,6 +111,9 @@
 
     <!--Timeline-->
     <script src="app/scripts/timeline/TimelineFactory.js"></script>
+
+    <!-- Notifications -->
+    <script src="app/scripts/notifications/NotificationsFactory.js"></script>
 
     <!-- Filters -->
     <script src="app/scripts/filters/spacesToDashes.js"></script>
