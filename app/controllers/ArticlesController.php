@@ -24,12 +24,13 @@ class ArticlesController extends ApiController {
 	{
 		$inputs = Input::all();
 
-		if(!$inputs['title'] || !$inputs['link'] || !$inputs['tags'] || !$inputs['famous_id'])
+		if(!$inputs['title'] || !$inputs['link'] || !$inputs['famous_id'])
 		{
 			return $this->errorWrongArgs();
 		}
 
-		$inputs['tags'] = $this->formatTags($inputs['tags']);
+		if($inputs['tags'] != '')
+			$inputs['tags'] = $this->formatTags($inputs['tags']);
 
 		$name = ucwords(str_replace('-', ' ', $inputs['famous_id']));
 
