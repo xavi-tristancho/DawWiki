@@ -112,8 +112,19 @@
     <!--Timeline-->
     <script src="app/scripts/timeline/TimelineFactory.js"></script>
 
+<<<<<<< Updated upstream
     <!-- Notifications -->
     <script src="app/scripts/notifications/NotificationsFactory.js"></script>
+=======
+<<<<<<< HEAD
+    <!--Schools-->
+    <script src="app/scripts/schools/SchoolsCtrl.js"></script>
+    <script src="app/scripts/schools/SchoolsFactory.js"></script>
+=======
+    <!-- Notifications -->
+    <script src="app/scripts/notifications/NotificationsFactory.js"></script>
+>>>>>>> FETCH_HEAD
+>>>>>>> Stashed changes
 
     <!-- Filters -->
     <script src="app/scripts/filters/spacesToDashes.js"></script>

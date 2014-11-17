@@ -157,6 +157,29 @@ angular.module('app', [
         controllerAs: 'reddits',
         authorizedRoles : [USER_ROLES.member, USER_ROLES.admin]
       })
+      .when('/schools', {
+        templateUrl: 'app/views/schools/index.html',
+        controller: 'SchoolsCtrl',
+        controllerAs: 'schools',
+        authorizedRoles : [USER_ROLES.member, USER_ROLES.admin]
+      }).when('/schools/create', {
+        templateUrl: 'app/views/schools/create.html',
+        controller: 'NewSchoolsCtrl',
+        controllerAs: 'schools',
+        authorizedRoles : [USER_ROLES.member, USER_ROLES.admin]
+      })
+      .when('/schools/:name', {
+        templateUrl: 'app/views/schools/show.html',
+        controller: 'ShowSchoolsCtrl',
+        controllerAs: 'schools',
+        authorizedRoles : [USER_ROLES.member, USER_ROLES.admin]
+      })
+      .when('/schools/:name/edit', {
+        templateUrl: 'app/views/schools/edit.html',
+        controller: 'EditSchoolsCtrl',
+        controllerAs: 'schools',
+        authorizedRoles : [USER_ROLES.admin]
+      })
       .otherwise({
         redirectTo: '/'
       });
