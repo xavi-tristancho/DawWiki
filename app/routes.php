@@ -25,4 +25,5 @@ Route::group(array('prefix' => 'api'), function() {
 	Route::resource('reddits', 'RedditsController');
 	Route::resource('recommended_reddits', 'RecommendedRedditsController');
 	Route::get('timeline', 'TimelineController@index');
+	Route::resource('schools', 'SchoolsController');
 });
