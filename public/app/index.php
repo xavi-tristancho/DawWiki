@@ -13,6 +13,7 @@
     <link href="app/bower_components/fontawesome/css/font-awesome.css" rel="stylesheet">
     <link href="app/bower_components/angular-loading-bar/build/loading-bar.css" rel="stylesheet">
     <link href="app/bower_components/toastr/toastr.css" rel="stylesheet">
+    <link href="app/bower_components/angular-ui-switch/angular-ui-switch.css" rel="stylesheet">
 
     <!-- bower:css -->
     <!-- endbower -->
@@ -53,6 +54,7 @@
     <script src="app/bower_components/angular-timedistance/src/bd.timedistance.js"></script>
     <script src="app/bower_components/angular-timedistance/src/bd.timedistance.js"></script>
     <script src="app/bower_components/toastr/toastr.js"></script>
+    <script src="app/bower_components/angular-ui-switch/angular-ui-switch.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -112,19 +114,15 @@
     <!--Timeline-->
     <script src="app/scripts/timeline/TimelineFactory.js"></script>
 
-<<<<<<< Updated upstream
     <!-- Notifications -->
     <script src="app/scripts/notifications/NotificationsFactory.js"></script>
-=======
-<<<<<<< HEAD
+
     <!--Schools-->
     <script src="app/scripts/schools/SchoolsCtrl.js"></script>
     <script src="app/scripts/schools/SchoolsFactory.js"></script>
-=======
+
     <!-- Notifications -->
     <script src="app/scripts/notifications/NotificationsFactory.js"></script>
->>>>>>> FETCH_HEAD
->>>>>>> Stashed changes
 
     <!-- Filters -->
     <script src="app/scripts/filters/spacesToDashes.js"></script>

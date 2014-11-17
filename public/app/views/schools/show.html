@@ -1,18 +1,32 @@
 <div class="row">
 	<ol class="breadcrumb">
-		  <li><a href="#/schools">Escoles</a></li>	
-		  <li class="active">{{ school.data.name }}</li>
+		  <li><a href="#/schools">Escoles</a></li>
+		  <li class="active">{{ schools.school.name }}</li>
 	</ol>
 </div>
 <ul class="event-list">
-    <img style="width: 8em" ng-src="https://avatars1.githubusercontent.com/u/5832706?v=3&s=460" alt="">
     <div class="info">
       <h2 class="title">{{ schools.school.name }}</h2>
-      <p class="desc">Recursos gratuits: {{ schools.school.free_resources}}</p>
-      <p class="desc">Conta gratuita: {{ schools.school.free_account}}</p>
-      <p class="desc">Cost mensual: {{ schools.school.monthly_cost}}</p>
-      <p class="desc">Cost anual: {{ schools.school.anual_cost}}</p>
-      <p class="desc">Cost conta vitalícia {{ schools.school.lifetime_cost}}</p>
+      <p class="desc">Recursos gratuits:
+				<span ng-if="schools.school.free_resources">Si</span>
+				<span ng-if="!schools.school.free_resources">No</span>
+			</p>
+      <p class="desc">Conta gratuita:
+				<span ng-if="schools.school.free_account">Si</span>
+				<span ng-if="!schools.school.free_account">No</span>
+			</p>
+      <p class="desc">Cost mensual: {{ schools.school.monthly_cost}}
+				<span ng-if="schools.school.currency == 'dollar'">$</span>
+				<span ng-if="schools.school.currency == 'euro'">€</span>
+			</p>
+      <p class="desc">Cost anual: {{ schools.school.anual_cost}}
+				<span ng-if="schools.school.currency == 'dollar'">$</span>
+				<span ng-if="schools.school.currency == 'euro'">€</span>
+			</p>
+      <p class="desc">Cost conta vitalícia {{ schools.school.lifetime_cost}}
+				<span ng-if="schools.school.currency == 'dollar'">$</span>
+				<span ng-if="schools.school.currency == 'euro'">€</span>
+			</p>
       <p class="desc">Qualificació: {{ schools.school.rate}}</p>
       <a ng-href="{{ schools.school.url }}" target="_blank">
         <span class="fa fa-globe"></span>

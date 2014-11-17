@@ -48,6 +48,7 @@
         url : '',
         free_resources: '',
         free_account: '',
+        currency: '',
         monthly_cost: '',
         anual_cost: '',
         lifetime_cost: '',
@@ -80,7 +81,7 @@
           .then(function(data)
           {
             $location.url('schools');
-          });        
+          });
       };
     }
 

@@ -10,7 +10,8 @@ angular.module('app', [
   'ngTagsInput',
   'angular-loading-bar',
   'angular-md5',
-  'bd.timedistance'
+  'bd.timedistance',
+  'uiSwitch'
   ])
   .config(function ($routeProvider, USER_ROLES) {
     $routeProvider

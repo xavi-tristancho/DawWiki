@@ -6,49 +6,55 @@
     <form ng-submit="schools.updateSchoolObject()" class="form-horizontal" role="form">
       <div class="form-group">
         <label class="col-sm-2 control-label">Nom</label>
-        <div class="col-sm-10">
+        <div class="col-sm-3">
           <input ng-model="schools.editSchoolObject.name" type="text" class="form-control" placeholder="Nom">
         </div>
       </div>
       <div class="form-group">
         <label class="col-sm-2 control-label">Web</label>
-        <div class="col-sm-10">
+        <div class="col-sm-3">
           <input ng-model="schools.editSchoolObject.url" type="url" class="form-control" placeholder="Web (http://)">
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-2 control-label">Coses gratis</label>
-        <div class="col-sm-10">
-          <input ng-model="schools.editSchoolObject.free_resources" type="checkbox" class="form-control">
+        <label class="col-sm-2 control-label">Recursos gratuits</label>
+        <div class="col-sm-1">
+          <switch ng-model="schools.editSchoolObject.free_resources" class="green"></switch>
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-2 control-label">Conta gratis</label>
-        <div class="col-sm-10">
-          <input ng-model="schools.editSchoolObject.free_account" type="checkbox" class="form-control">
+        <label class="col-sm-2 control-label">Conta gratuita</label>
+        <div class="col-sm-1">
+          <switch ng-model="schools.editSchoolObject.free_account" class="green"></switch>
         </div>
       </div>
       <div class="form-group">
         <label class="col-sm-2 control-label">Subscripció mensual</label>
-        <div class="col-sm-10">
+        <div class="col-sm-1">
           <input ng-model="schools.editSchoolObject.monthly_cost" type="text" class="form-control">
+        </div>
+        <div class="col-sm-1">
+          <select ng-model="schools.editSchoolObject.currency" class="form-control" default="eur">
+            <option value="dollar">$</option> 
+            <option value="euro">€</option> 
+          </select>
         </div>
       </div>
       <div class="form-group">
         <label class="col-sm-2 control-label">Subscripció Anual</label>
-        <div class="col-sm-10">
+        <div class="col-sm-1">
           <input ng-model="schools.editSchoolObject.anual_cost" type="text" class="form-control">
         </div>
       </div>
       <div class="form-group">
         <label class="col-sm-2 control-label">Subscripció vitalícia</label>
-        <div class="col-sm-10">
+        <div class="col-sm-1">
           <input ng-model="schools.editSchoolObject.lifetime_cost" type="text" class="form-control">
         </div>
       </div>
       <div class="form-group">
         <label class="col-sm-2 control-label">Puntuació</label>
-        <div class="col-sm-10">
+        <div class="col-sm-1">
             <select ng-model="schools.editSchoolObject.rate" class="form-control">
               <option value="1">1</option> 
               <option value="2">2</option> 
@@ -60,7 +66,7 @@
       </div>
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-          <button type="submit" class="btn btn-success">Guardar</button>
+          <button type="submit" class="btn btn-success">Afegeix</button>
         </div>
       </div>
     </form>

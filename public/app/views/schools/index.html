@@ -9,16 +9,12 @@
 		<h2>Escoles</h2>
 		<ul class="list-group">
 			<li class="list-group-item" ng-repeat="school in schools.schools">
-				<div class="row">
-      				<div ng-if="isAuthorized(userRoles.admin)" style="margin-bottom: 5px" class="col-md-12">
-      				  <span class="pull-right">
-      				    <a href="#/schools/{{ school.name | spacesToDashes }}/edit">
-      				      <button type="button" class="btn btn-info btn-xs">Editar</button>
-      				    </a>
-      				    <button ng-click="schools.destroy(school.id)" type="button" class="btn btn-danger btn-xs">Eliminar</button>
-      				    </span>
-      				</div>
-    			</div>
+			  <span ng-if="isAuthorized(userRoles.admin)" class="pull-right">
+			    <a href="#/schools/{{ school.name | spacesToDashes }}/edit">
+			      <button type="button" class="btn btn-info btn-xs">Editar</button>
+			    </a>
+			    <button ng-click="schools.destroy(school.id)" type="button" class="btn btn-danger btn-xs">Eliminar</button>
+			  </span>
 				<a ng-href="#/schools/{{ school.name | spacesToDashes }}">{{ school.name }}</a>
 			</li>
 		</ul>

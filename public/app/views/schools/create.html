@@ -17,15 +17,15 @@
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-2 control-label">Coses gratis</label>
+        <label class="col-sm-2 control-label">Recursos gratuits</label>
         <div class="col-sm-1">
-          <input ng-model="schools.newSchoolObject.free_resources" type="checkbox" class="form-control">
+          <switch ng-model="schools.newSchoolObject.free_resources" class="green"></switch>
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-2 control-label">Conta gratis</label>
+        <label class="col-sm-2 control-label">Conta gratuita</label>
         <div class="col-sm-1">
-          <input ng-model="schools.newSchoolObject.free_account" type="checkbox" class="form-control">
+          <switch ng-model="schools.newSchoolObject.free_account" class="green"></switch>
         </div>
       </div>
       <div class="form-group">
@@ -34,9 +34,9 @@
           <input ng-model="schools.newSchoolObject.monthly_cost" type="text" class="form-control">
         </div>
         <div class="col-sm-1">
-          <select ng-model="schools.newSchoolObject.rate" class="form-control" default="eur">
-            <option value="eur">$</option> 
-            <option value="dol">€</option> 
+          <select ng-model="schools.newSchoolObject.currency" class="form-control" default="eur">
+            <option value="dollar">$</option> 
+            <option value="euro">€</option> 
           </select>
         </div>
       </div>
