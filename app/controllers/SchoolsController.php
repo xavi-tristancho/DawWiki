@@ -73,14 +73,15 @@ class SchoolsController extends ApiController {
 		$school = School::find($id);
 		$inputs = Input::all();
 
-		$school->name 		 	= $inputs['name'];
-		$school->url 		 	= $inputs['url'];
+		$school->name 		 	    = $inputs['name'];
+		$school->url 		 	      = $inputs['url'];
 		$school->free_resources = $inputs['free_resources'];
 		$school->free_account 	= $inputs['free_account'];
+		$school->currency       = $inputs['currency'];
 		$school->monthly_cost   = $inputs['monthly_cost'];
 		$school->anual_cost     = $inputs['anual_cost'];
 		$school->lifetime_cost  = $inputs['lifetime_cost'];
-		$school->rate 		 	= $inputs['rate'];
+		$school->rate 		 	    = $inputs['rate'];
 
 		$school->save();
 	}

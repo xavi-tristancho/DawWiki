@@ -23,6 +23,7 @@ class SchoolTransformer extends TransformerAbstract
             'url'            => $school->url,
             'free_resources' => $school->free_resources,
             'free_account'   => $school->free_account,
+            'currency'   => $school->currency,
             'monthly_cost'   => $school->monthly_cost,
             'anual_cost'     => $school->anual_cost,
             'lifetime_cost'  => $school->lifetime_cost,
