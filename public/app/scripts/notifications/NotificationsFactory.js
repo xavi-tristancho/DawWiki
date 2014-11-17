@@ -12,7 +12,7 @@
         "closeButton": false,
         "debug": false,
         "progressBar": false,
-        "positionClass": "toast-bottom-right",
+        "positionClass": "toast-top-right",
         "onclick": null,
         "showDuration": "300",
         "hideDuration": "1000",
