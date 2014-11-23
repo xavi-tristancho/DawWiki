@@ -1,7 +1,7 @@
 <div class="row">
 
 	<ol class="breadcrumb">
-		  <li><a href="#/famouses">Mestres</a></li>	
+		  <li><a href="#/famouses">Mestres</a></li>
 		  <li class="active">{{ famouses.famous.name }}</li>
 	</ol>
 
@@ -20,7 +20,7 @@
 				        <img ng-src="{{ famouses.famous.photo }}" alt="">
 				        <div class="info">
 				          <h2 class="title">{{ famouses.famous.name }}</h2>
-				          <p class="desc">{{ famouses.famous.description}}</p>
+				          <p class="desc">{{ famouses.famous.description | limitString: 200 }}</p>
 				          <ul>
 				            <li ng-if="famouses.famous.web" style="width:50%;">
 				              <a ng-href="{{ famouses.famous.web }}" target="_blank">
@@ -91,7 +91,7 @@
 				</ul>
 			</div>
 		</div>
-		
+
 	</div>
 
 </div>
